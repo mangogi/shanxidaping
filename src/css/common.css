@@ -1,0 +1,59 @@
+.bigbox {
+    width: 1920px;
+    height: 1080px;
+    background-color: #051630;
+    background-image: url('../imgs/title-bottom.png');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 0px;
+}
+
+.tips {
+    width: 200px;
+    height: 32px;
+    background-color: #102653;
+    border-radius: 2px;
+    font-family: PingFang-SC-Regular;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 24px;
+    letter-spacing: 0px;
+    color: #ffffff;
+    margin-left: 50px;
+    margin-top: 22px;
+}
+
+.returnbtn {
+    width: 90px;
+    height: 32px;
+    background-image: linear-gradient(0deg,
+            #0543a1 0%,
+            #09bdb1 100%),
+        linear-gradient(#102653,
+            #102653);
+    background-blend-mode: normal,
+        normal;
+    border-style: solid;
+    border-width: 1px;
+    border-image-source: linear-gradient(0deg,
+            #116aa2 0%,
+            #1bdfd2 100%);
+    border-image-slice: 1;
+    margin-left: 10px;
+    /* width: 62px;
+height: 15px; */
+    font-family: PingFang-SC-Regular;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 24px;
+    letter-spacing: 0px;
+    color: #ffffff;
+}
+
+.titleimg {
+    width: 195px;
+    height: 30px;
+    margin-left: 513px;
+}

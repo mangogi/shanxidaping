@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>档案管理</title>
+    <link rel="stylesheet" href="../src/css/common.css">
+    <link rel="stylesheet" href="../src/css/ageimg.css">
+    <link rel="stylesheet" href="./css/dagl.css">
+</head>
+<body>
+    <div class="bigbox">
+        <!-- <img class="title-bottom" src="./imgs/title-bottom.png" alt=""> -->
+        <div class="title">
+            <select name="选项卡" class="tips">
+                <option value="one" selected="selected">档案管理</option>
+                <option value="two">人事代理服务</option>
+                <option value="three">单位社保代理服务</option>
+                <option value="four">流动人员社保代理服务</option>
+                <option value="five">流动党员</option>
+                <option value="six">公共求职招聘</option>
+            </select>
+            <button class="returnbtn">返回首页</button>
+            <img class="titleimg" src="./imgs/档案管理.png" alt="">
+        </div>
+        <div class="main">
+
+            <div class="bottom">
+
+
+                <div class="left">
+                    <div class="lefttop">
+                        <div class="titlebox">
+                            <img class="timg timg1" src="./imgs/标题 (2).png" alt="">
+                            <p class="smalltit">历年存档情况</p>
+                            <img class="timg" src="./imgs/标题 (3).png" alt="">
+                            <p class="time">截至：2010-10-13</p>
+                        </div>
+                        <div class="echart1" id="charts1"></div>
+                    </div>
+                    <div class="leftcenter">
+                        <div class="titlebox">
+                            <img class="timg timg1" src="./imgs/标题 (2).png" alt="">
+                            <p class="smalltit">历年档案转出</p>
+                            <img class="timg" src="./imgs/标题 (3).png" alt="">
+                            <p class="time">截至：2010-10-13</p>
+                        </div>
+                        <div class="echart1" id="charts2"></div>
+                    </div>
+                    <div class="leftbottom ">
+                        <div class="titlebox">
+                            <img class="timg timg1" src="./imgs/标题 (2).png" alt="">
+                            <p class="smalltit">历年档案转入</p>
+                            <img class="timg" src="./imgs/标题 (3).png" alt="">
+                            <p class="time">截至：2010-10-13</p>
+                        </div>
+                        <div class="echart1" id="charts3"></div>
+                    </div>
+                </div>
+                <div class="center">
+                    <div class="centertop">
+                        <div class="titlebox2">
+                            <img class="timg timg2" src="./imgs/标题 (2).png" alt="">
+                            <p class="smalltit2">档案流转热力图</p>
+                            <img class="timg" src="./imgs/标题 (3).png" alt="">
+                            <p class="time time2">截至：2010-10-13</p>
+                        </div>
+                        <div>
+                            <!-- <img src="./imgs/标题 (1).png" alt=""> -->
+                            <p class="littletitle">存档总数</p>
+                            <div class="cdzs">
+                                <p class="num"><span class="span1">5</span></p>
+                                <p class="num"><span class="span1">5</span></p>
+                                <p class="num"><span class="span1">5</span></p>
+                                <p class="douhao">,</p>
+                                <p class="num"><span class="span1">5</span></p>
+                                <p class="num"><span class="span1">5</span></p>
+                                <p class="num"><span class="span1">5</span></p>
+                                <p class="fen">份</p>
+                            </div>
+                            <div class="lists">
+                                <div class="one">
+                                    <img class="icon1" src="./imgs/icon_999.png" alt="">
+                                    <div class="numbox">
+                                        <p style="margin-top: 20px;margin-bottom: 11px;">临时档案</p>
+                                        <div class="nums">
+                                            <!-- 数据： official -->
+                                            <p class="number1" id="num1">5,555</p><span class="fen">份</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="one">
+                                    <img class="icon1" src="./imgs/icon_52.png" alt="">
+                                    <div class="numbox">
+                                        <p style="margin-top: 20px;margin-bottom: 11px;">临时档案</p>
+                                        <div class="nums">
+                                            <p class="number1" id="num1">5,555</p><span class="fen">份</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="one">
+                                    <img class="icon1" src="./imgs/icon_54.png" alt="">
+                                    <div class="numbox">
+                                        <p style="margin-top: 20px;margin-bottom: 11px;">临时档案</p>
+                                        <div class="nums">
+                                            <p class="number1" id="num1">5,555</p><span class="fen">份</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="centerbottom">
+                        <div class="titlebox2">
+                            <img class="timg timg2" src="./imgs/标题 (2).png" alt="">
+                            <p class="smalltit2">档案流转热力图</p>
+                            <img class="timg" src="./imgs/标题 (3).png" alt="">
+                            <p class="time time2">截至：2010-10-13</p>
+                        </div>
+                        <div id="map">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right">
+                    <div class="lefttop righttop">
+
+
+                        <div class="titlebox">
+                            <img class="timg timg1" src="./imgs/标题 (2).png" alt="">
+                            <p class="smalltit">存档办理情况</p>
+                            <img class="timg" src="./imgs/标题 (3).png" alt="">
+
+                        </div>
+                        <div style="display: flex;flex-direction: row;">
+
+
+                            <p class="littletitle">存档总数</p>
+                            <p class="time">截至：2010-10-13</p>
+                        </div>
+                        <div class="cdzs">
+                            <p class="num"><span class="span1">5</span></p>
+                            <p class="num"><span class="span1">5</span></p>
+                            <p class="num"><span class="span1">5</span></p>
+                            <p class="douhao">,</p>
+                            <p class="num"><span class="span1">5</span></p>
+                            <p class="num"><span class="span1">5</span></p>
+                            <p class="num"><span class="span1">5</span></p>
+                            <p class="fen" style="width: 24px;">人次</p>
+                        </div>
+                        <p class="littletitle littletitle2">档案材料增补</p>
+                        <div class="echart1 echart2" id="charts5">
+
+                        </div>
+                    </div>
+                    <div class="leftcenter rightcenter">
+
+
+                        <div class="titlebox">
+                            <img class="timg timg1" src="./imgs/标题 (2).png" alt="">
+                            <p class="smalltit">档案借查情况</p>
+                            <img class="timg" src="./imgs/标题 (3).png" alt="">
+
+                        </div>
+                        <div class="both" style="display: flex;flex-direction: row;">
+                            <div class="first">
+                                <p class="littletitle littletitle3">档案查阅借阅</p>
+                                <div class="echart1 echart3" style="display: flex;flex-direction: row;">
+
+                                    <img class="zu360" src="./imgs/组360.png" alt="">
+                                    <div class="percents">
+                                        <p>65%</p>
+                                        <p>20%</p>
+                                        <p>8%</p>
+                                        <p>7%</p>
+                                    </div>
+                                    <div class="texts">
+                                        <div class="textone">
+                                            <p>查阅档案</p>
+                                            <p class="p1">6500卷/份</p>
+                                        </div>
+                                        <div class="textone text2">
+                                            <p>借阅档案</p>
+                                            <p class="p1">2000卷/份</p>
+                                        </div>
+                                        <div class="textone text2">
+                                            <p>复印档案材料</p>
+                                            <p class="p1">800卷/份</p>
+                                        </div>
+                                        <div class="textone text2">
+                                            <p>借出材料</p>
+                                            <p class="p1">700卷/份</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="second">
+                                <p class="littletitle littletitle3 littletitle3">出具证明</p>
+                                <div class="echart1 echart3" id="charts6">
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="leftbottom rightbottom">
+
+
+                        <div class="titlebox">
+                            <img class="timg timg1" src="./imgs/标题 (2).png" alt="">
+                            <p class="smalltit">档案借查情况</p>
+                            <img class="timg" src="./imgs/标题 (3).png" alt="">
+                
+                        </div>
+                        <div class="both" style="display: flex;flex-direction: row;">
+                            <div class="first">
+                                <p class="littletitle littletitle3">档案查阅借阅</p>
+
+                                <!-- 文凭图 -->
+                                <div class="echart1 echart3">
+                                    <img class="zu358" src="./imgs/组358_10.png" alt="">
+                                    <div class="allimgs">
+                                        <div class="zuhe">
+                                            <p class="img1">54%
+                                                <span class="wenpin"><br><br>本科</span>
+                                            </p>
+                                            
+                                        </div>
+                                        <div class="zuhe">
+                                            <p class="img1 img2">54%
+                                                <span class="wenpin"><br><br>高中</span>
+                                            </p>
+                                            
+                                        </div>
+                                        <div class="zuhe">
+                                            <p class="img1 img2 img3">54%
+                                                <span class="wenpin"><br><br>大专</span>
+                                            </p>
+                                            
+                                        </div>
+                                        <div class="zuhe">
+                                            <p class="img1 img4">54%
+                                                
+                                            </p>
+                                            <p class="wenpin wenpin4">研究生及以上</p>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="second">
+                                <p class="littletitle littletitle3 littletitle3">出具证明</p>
+                                <div class="echart1 echart3" id="charts7">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
+<script src="./js/echarts.min.js"></script>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/dagl.js"></script>
+<script src="./js/map/shanxi1.js"></script>
+
+<script>
+
+</script>

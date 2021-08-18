@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>人事代理服务</title>
+    <link rel="stylesheet" href="../src/css/common.css">
+    <link rel="stylesheet" href="./css/ageimg.css">
+</head>
+
+<style>
+    .top {
+        width: 1820px;
+        margin-left: 50px;
+        margin-top: 21px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .one {
+        width: 447px;
+        height: 90px;
+        background-image: linear-gradient(0deg,
+                #102654 0%,
+                #081c3b 100%),
+            linear-gradient(#081c3b,
+                #081c3b);
+        background-blend-mode: normal,
+            normal;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: row;
+
+        color: #ffffff;
+    }
+
+    .icon1 {
+        width: 48px;
+        height: 48px;
+        margin-top: 21px;
+        margin-left: 76px;
+    }
+
+    .numbox {
+        margin-left: 41px;
+    }
+
+    .num {
+        font-family: AvantGardeITCbyBT-Medium;
+        font-size: 28px;
+        font-weight: normal;
+        font-stretch: normal;
+        line-height: 24px;
+        letter-spacing: 0px;
+        color: #2bd5fb;
+        margin-top: 0px;
+        margin-bottom: 22px;
+    }
+
+    .nums {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .fen1 {
+        width: 24px;
+        height: 12px;
+        font-family: PingFang-SC-Regular;
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+        line-height: 14px;
+        letter-spacing: 0px;
+        color: #fefefe;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bottom {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .left {
+        margin-top: 20px;
+        margin-left: 50px;
+    }
+
+    .lefttop {
+        width: 500px;
+        height: 268px;
+        background-color: #0a1d39;
+        border: solid 1px #0b4da2;
+
+    }
+
+    .leftbottom {
+        width: 500px;
+        height: 557px;
+        background-color: #0a1d39;
+        border: solid 1px #0b4da2;
+        margin-top: 20px;
+    }
+
+    .center {
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+
+    .centertop {
+        width: 780px;
+        height: 268px;
+        background-color: #0a1d39;
+        border: solid 1px #0b4da2;
+    }
+
+    .centerbottom {
+        width: 780px;
+        height: 557px;
+        background-color: #0a1d39;
+        border: solid 1px #0b4da2;
+        margin-top: 20px;
+    }
+
+    .right {
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+
+    .righttop {
+        width: 500px;
+        height: 266px;
+        background-color: #0a1d39;
+        border: solid 1px #0b4da2;
+    }
+
+    .rightcenter {
+        width: 500px;
+        height: 266px;
+        background-color: #0a1d39;
+        border: solid 1px #0b4da2;
+        margin-top: 20px;
+    }
+
+    .rightbottom {
+        width: 500px;
+        height: 267px;
+        background-color: #0a1d39;
+        border: solid 1px #0b4da2;
+        margin-top: 20px;
+    }
+
+/* 小标题组1 1200px */
+.titlebox {
+    width: 500px;
+    height: 32px;
+    background-image: linear-gradient(-90deg,
+            rgba(10, 61, 126, 0.2) 0%,
+            #0a3d7e 50%,
+            rgba(10, 61, 126, 0.2) 100%),
+        linear-gradient(#0a3d7e,
+            #0a3d7e);
+    background-blend-mode: normal,
+        normal;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.timg {
+    width: 62px;
+    height: 10px;
+
+}
+
+.timg1 {
+    margin-left: 125px;
+}
+
+.smalltit {
+    width: 96px;
+    height: 15px;
+    font-family: PingFang-SC-Bold;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 14px;
+    letter-spacing: 0px;
+    color: #fefefe;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.time {
+    width: 106px;
+    height: 12px;
+    font-family: PingFang-SC-Bold;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 14px;
+    letter-spacing: 0px;
+    color: #39f4f6;
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+
+/* 小标题组2 780px */
+.titlebox2 {
+    width: 780px;
+    height: 32px;
+    background-image: linear-gradient(-90deg,
+            rgba(10, 61, 126, 0.2) 0%,
+            #0a3d7e 50%,
+            rgba(10, 61, 126, 0.2) 100%),
+        linear-gradient(#0a3d7e,
+            #0a3d7e);
+    background-blend-mode: normal,
+        normal;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.timg {
+    width: 62px;
+    height: 10px;
+
+}
+
+.timg2 {
+    margin-left: 255px;
+}
+
+.timg3 {
+    margin-left: 155px;
+}
+
+.smalltit2 {
+    width: 112px;
+    height: 15px;
+    font-family: PingFang-SC-Bold;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 14px;
+    letter-spacing: 0px;
+    color: #fefefe;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.smalltit3 {
+    width: 128px;
+}
+
+.time2 {
+    margin-left: 135px;
+}
+
+.time3 {
+    margin-left: 37px;
+}
+
+    /* 图标的标题 */
+    .littletitle {
+        background-image: url('./imgs/标题\ \(1\).png');
+        background-repeat: no-repeat;
+        width: 120px;
+        height: 16px;
+        font-family: PingFang-SC-Bold;
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+        line-height: 14px;
+        letter-spacing: 0px;
+        color: #fefefe;
+        padding-left: 12px;
+        padding-top: 2px;
+        margin-left: 11px;
+        margin-top: 10px;
+        margin-bottom: 0px;
+    }
+
+    .littletitle2 {
+        margin-left: 11px;
+    }
+
+    .littletitle3 {
+        margin-left: 10px;
+    }
+
+    /* 存档总数 */
+.cdzs {
+    height: 34px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 11px;
+    margin-top: 10px;
+}
+
+.numb {
+    width: 28px;
+    height: 34px;
+    background-image: linear-gradient(0deg,
+            #0543a1 0%,
+            #09bdb1 100%),
+        linear-gradient(#ffffff,
+            #ffffff);
+    background-blend-mode: normal,
+        normal;
+    border-style: solid;
+    border-width: 1px;
+    border-image-source: linear-gradient(0deg,
+            #116aa2 0%,
+            #1bdfd2 100%);
+    border-image-slice: 1;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.span1 {
+    width: 13px;
+    height: 20px;
+    font-family: AvantGardeITCbyBT-Medium;
+    font-size: 26px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #fefefe;
+    margin-left: 5px;
+    padding-top: 10px;
+}
+
+.douhao {
+    font-family: AdobeHeitiStd-Regular;
+    font-size: 26px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 14px;
+    letter-spacing: 0px;
+    color: #fefefe;
+    margin-top: 15px;
+}
+
+.fen {
+    width: 12px;
+    height: 12px;
+    font-family: PingFang-SC-Regular;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 14px;
+    letter-spacing: 0px;
+    color: #fefefe;
+    margin-top: 20px;
+}
+/* 环比 */
+.huanbi{
+    color: #ffffff;
+    font-size: 12px;
+    margin-left: 55px;
+}
+.huanbi span{
+    width: 51px;
+	height: 14px;
+	font-family: AvantGardeITCbyBT-Medium;
+	font-size: 18px;
+	letter-spacing: 0px;
+	color: #ff265e;
+}
+/* 图表框 */
+.echart1{
+    width: 478px;
+	height: 109px;
+	background-image: linear-gradient(0deg, 
+		#102654 0%, 
+		#081c3b 100%), 
+	linear-gradient(
+		#081c3b, 
+		#081c3b);
+	background-blend-mode: normal, 
+		normal;
+	border-radius: 3px;
+    margin-top: 12px;
+    margin-left: 11px;
+}
+.echart2{
+    width: 478px;
+	height: 206px;
+	background-image: linear-gradient(0deg, 
+		#102654 0%, 
+		#081c3b 100%), 
+	linear-gradient(
+		#081c3b, 
+		#081c3b);
+	background-blend-mode: normal, 
+		normal;
+	border-radius: 3px;
+    margin-top: 12px;
+    margin-left: 11px;
+}
+.echart3{
+    width: 234px;
+	height: 226px;
+	background-image: linear-gradient(0deg, 
+		#102654 0%, 
+		#081c3b 100%), 
+	linear-gradient(
+		#081c3b, 
+		#081c3b);
+	background-blend-mode: normal, 
+		normal;
+	border-radius: 3px;
+    margin-top: 12px;
+    margin-left: 11px;
+}
+.echart4{
+    margin-left: 10px;
+}
+.echart5{
+    width: 758px;
+	height: 215px;
+	background-image: linear-gradient(0deg, 
+		#102654 0%, 
+		#081c3b 100%), 
+	linear-gradient(
+		#081c3b, 
+		#081c3b);
+	background-blend-mode: normal, 
+		normal;
+	border-radius: 3px;
+    margin-top: 10px;
+    margin-left: 11px;
+}
+.echart6{
+    width: 758px;
+	height: 206px;
+	background-image: linear-gradient(0deg, 
+		#102654 0%, 
+		#081c3b 100%), 
+	linear-gradient(
+		#081c3b, 
+		#081c3b);
+	background-blend-mode: normal, 
+		normal;
+	border-radius: 3px;
+    margin-left: 11px;
+    margin-top: 12px;
+}
+.echart7{
+    width: 374px;
+	height: 226px;
+	background-image: linear-gradient(0deg, 
+		#102654 0%, 
+		#081c3b 100%), 
+	linear-gradient(
+		#081c3b, 
+		#081c3b);
+	background-blend-mode: normal, 
+		normal;
+	border-radius: 3px;
+    margin-top: 12px;
+    margin-left: 11px;
+}
+.echart8{
+    margin-left: 10px;
+}
+.echart9{
+    width: 478px;
+	height: 215px;
+    margin-top: 10px;
+}
+.chart7{
+    width: 374px;
+    height: 113px;
+    margin:0px;
+}
+.echart91{
+    width: 159.3px;
+    height: 215px;
+    margin: 0px;
+}
+
+</style>
+
+<body>
+    <div class="bigbox">
+        <!-- <img class="title-bottom" src="./imgs/title-bottom.png" alt=""> -->
+        <div class="title">
+            <select name="选项卡" class="tips">
+                <option value="one">档案管理</option>
+                <option value="two" selected="selected">人事代理服务</option>
+                <option value="three">单位社保代理服务</option>
+                <option value="four">流动人员社保代理服务</option>
+                <option value="five">流动党员</option>
+                <option value="six">公共求职招聘</option>
+            </select>
+            <button class="returnbtn">返回首页</button>
+            <img class="titleimg" src="./imgs/人事代理服务.png" alt="">
+        </div>
+        <div class="main">
+            <div class="top">
+                <div class="one">
+                    <img class="icon1" src="./imgs/icon.png" alt="">
+                    <div class="numbox">
+                        <p style="margin-top: 20px;margin-bottom: 11px;">代理单位数量</p>
+                        <div class="nums">
+                            <p class="num" id="num1">5,555</p><span class="fen1">家</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="one">
+                    <img class="icon1" src="./imgs/icon_16.png" alt="">
+                    <div class="numbox">
+                        <p style="margin-top: 20px;margin-bottom: 11px;">代理人数</p>
+                        <div class="nums">
+                            <p class="num" id="num1">5,555</p><span class="fen1">人次</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="one">
+                    <img class="icon1" src="./imgs/icon_43.png" alt="">
+                    <div class="numbox">
+                        <p style="margin-top: 20px;margin-bottom: 11px;">人事代理业务总数</p>
+                        <div class="nums">
+                            <p class="num" id="num1">5,555</p><span class="fen1">人次</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="one">
+                    <img class="icon1" src="./imgs/icon_65.png" alt="">
+                    <div class="numbox">
+                        <p style="margin-top: 20px;margin-bottom: 11px;">职称业务经办人次</p>
+                        <div class="nums">
+                            <p class="num" id="num1">5,555</p><span class="fen1">人次</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="left">
+                    <div class="lefttop">
+                        <div class="titlebox">
+                            <img class="timg timg1" src="./imgs/标题 (2).png" alt="">
+                            <p class="smalltit">集体户籍管理</p>
+                            <img class="timg" src="./imgs/标题 (3).png" alt="">
+                            <p class="time">截至：2010-10-13</p>
+                        </div>
+                        <p class="littletitle">户籍总数</p>
+                        <div style="display: flex;flex-direction: row;align-items: baseline;">
+                        <div class="cdzs">
+                            <p class="numb"><span class="span1">5</span></p>
+                            <p class="numb"><span class="span1">5</span></p>
+                            <p class="numb"><span class="span1">5</span></p>
+                            <p class="douhao">&nbsp;,</p>
+                            <p class="numb"><span class="span1">5</span></p>
+                            <p class="numb"><span class="span1">5</span></p>
+                            <p class="numb"><span class="span1">5</span></p>
+                            <p class="fen">&nbsp;&nbsp;人</p>
+                        </div>
+                        <div class="huanbi">
+                            环比：<span>38.3%</span>
+                            <img src="./imgs/形状595.png" alt="">
+                        </div>
+                    </div>
+                        <p class="littletitle">新落户情况</p>
+                        <div class="echart1" id="chart1">
+
+                        </div>
+                    </div>
+                    <div class="leftbottom">
+                        <div class="titlebox">
+                            <img class="timg timg1" src="./imgs/标题 (2).png" alt="">
+                            <p class="smalltit">历年迁移情况</p>
+                            <img class="timg" src="./imgs/标题 (3).png" alt="">
+                            <p class="time">截至：2010-10-13</p>
+                        </div>
+                        <p class="littletitle">近五年迁入迁出情况</p>
+                        <div class="echart2" id="chart2">
+                            <!-- 左下1 -->
+                        </div>
+                        <div style="display: flex;flex-direction: row;">
+                            <div>
+                                <p class="littletitle">学历分布</p>
+                                <div class="echart3">
+                                    <img class="zu358" src="./imgs/组358_10.png" alt="">
+                                    <div class="allimgs">
+                                        <div class="zuhe">
+                                            <p class="img1">54%
+                                                <span class="wenpin"><br><br>本科</span>
+                                            </p>
+                                            
+                                        </div>
+                                        <div class="zuhe">
+                                            <p class="img1 img2">54%
+                                                <span class="wenpin"><br><br>高中</span>
+                                            </p>
+                                            
+                                        </div>
+                                        <div class="zuhe">
+                                            <p class="img1 img2 img3">54%
+                                                <span class="wenpin"><br><br>大专</span>
+                                            </p>
+                                            
+                                        </div>
+                                        <div class="zuhe">
+                                            <p class="img1 img4">54%
+                                                
+                                            </p>
+                                            <p class="wenpin wenpin4">研究生及以上</p>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="littletitle">年龄分布</p>
+                                <div class="echart3 echart4" id="chart3">
+                                    <!-- 左下 2-->
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="center">
+                    <div class="centertop">
+                        <div class="titlebox2">
+                            <img class="timg timg2" src="./imgs/标题 (2).png" alt="">
+                            <p class="smalltit2">档案流转热力图</p>
+                            <img class="timg" src="./imgs/标题 (3).png" alt="">
+                            <p class="time time2">截至：2010-10-13</p>
+                        </div>
+                       <div class="echart5">
+                        <!-- 3d饼图 -->
+                       </div>
+
+                    </div>
+                    <div class="centerbottom">
+                        <div class="titlebox2">
+                            <img class="timg timg2" src="./imgs/标题 (2).png" alt="">
+                            <p class="smalltit2">档案流转热力图</p>
+                            <img class="timg" src="./imgs/标题 (3).png" alt="">
+                            <p class="time time2">截至：2010-10-13</p>
+                        </div>
+                        <p class="littletitle">报名及审核情况</p>
+                        <div class="echart6" id="chart5">
+                            <!-- 中下1 -->
+                        </div>
+                        <div style="display: flex;flex-direction: row;">
+                            <div>
+                                <p class="littletitle">业务经办人次</p>
+                                <div class="echart7" id="chart6"></div>
+                            </div>
+                            <div>
+                                <p class="littletitle">认定/考试比例</p>
+                                <div class="echart7 echart8">
+                                    <div class="chart7" id="chart7-1">
+
+                                    </div>
+                                    <div class="chart7" id="chart7-2">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="righttop">
+                        <div class="titlebox">
+                            <img class="timg timg1" src="./imgs/标题 (2).png" alt="">
+                            <p class="smalltit">退休业务办理情况</p>
+                            <img class="timg" src="./imgs/标题 (3).png" alt="">
+                            <p class="time">截至：2010-10-13</p>
+                        </div>
+                        <div class="echart1 echart9" id="chart8"></div>
+                    </div>
+                    <div class="rightcenter">
+                        <div class="titlebox">
+                            <img class="timg timg1" src="./imgs/标题 (2).png" alt="">
+                            <p class="smalltit">计划生育情况</p>
+                            <img class="timg" src="./imgs/标题 (3).png" alt="">
+                            <p class="time">截至：2010-10-13</p>
+                        </div>
+                        <div class="echart1 echart9" id="chart9"></div>
+                    </div>
+                    <div class="rightbottom">
+                        <div class="titlebox">
+                            <img class="timg timg1" src="./imgs/标题 (2).png" alt="">
+                            <p class="smalltit">保障性住房业务</p>
+                            <img class="timg" src="./imgs/标题 (3).png" alt="">
+                            <p class="time">截至：2010-10-13</p>
+                        </div>
+                        <div class="echart1 echart9" style="display: flex;flex-direction: row;">
+                            <!-- 水滴图 -->
+                            <div class="echart91" id="chart101">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="./js/echarts.min.js"></script>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/rsdlfw.js"></script>
+<script>
+
+</script>

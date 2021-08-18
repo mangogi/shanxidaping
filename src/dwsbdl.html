@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>单位社保代理</title>
     <link rel="stylesheet" href="../src/css/common.css">
+    <link rel="stylesheet" href="./css/ageimg.css">
 </head>
 
 <style>
@@ -223,7 +224,17 @@
     .time3{
         margin-left: 37px;
     }
-
+/* 学历分布 */
+.zu358 {
+    margin-top: 23%;
+    margin-left: 30%;
+}
+.allimgs {
+    margin-top: -50%;
+    margin-left: 20%;
+    display: flex;
+    flex-direction: row;
+}
     /* 图标的标题 */
     .littletitle{
         background-image: url('./imgs/标题\ \(1\).png');
@@ -371,8 +382,8 @@
                     </div>
                     <div>
                         <!-- <img src="./imgs/标题 (1).png" alt=""> -->
-                        <p class="littletitle littletitle2">代收金额分析</p>
-                        <div class="echart1 echart2">
+                        <p class="littletitle littletitle2">服务情况</p>
+                        <div class="echart1 echart2" id="chart3">
 
                         </div>
                     </div>
@@ -380,15 +391,42 @@
                 <div class="lefttop leftbottom">
                     <div>
                         <!-- <img src="./imgs/标题 (1).png" alt=""> -->
-                        <p class="littletitle littletitle2">代收金额分析</p>
+                        <p class="littletitle littletitle2">学历分析</p>
                         <div class="echart1 echart3">
-
+                            <img class="zu358" src="./imgs/组358_10.png" alt="">
+                                    <div class="allimgs">
+                                        <div class="zuhe">
+                                            <p class="img1">54%
+                                                <span class="wenpin"><br><br>本科</span>
+                                            </p>
+                                            
+                                        </div>
+                                        <div class="zuhe">
+                                            <p class="img1 img2">54%
+                                                <span class="wenpin"><br><br>高中</span>
+                                            </p>
+                                            
+                                        </div>
+                                        <div class="zuhe">
+                                            <p class="img1 img2 img3">54%
+                                                <span class="wenpin"><br><br>大专</span>
+                                            </p>
+                                            
+                                        </div>
+                                        <div class="zuhe">
+                                            <p class="img1 img4">54%
+                                                
+                                            </p>
+                                            <p class="wenpin wenpin4">研究生及以上</p>
+                                            
+                                        </div>
+                                    </div>
                         </div>
                     </div>
                     <div>
                         <!-- <img src="./imgs/标题 (1).png" alt=""> -->
-                        <p class="littletitle littletitle3">代收金额分析</p>
-                        <div class="echart1 echart4">
+                        <p class="littletitle littletitle3">年龄分布</p>
+                        <div class="echart1 echart4" id="chart4">
 
                         </div>
                     </div>

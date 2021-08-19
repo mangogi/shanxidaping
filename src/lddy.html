@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>流动党员</title>
+    <link rel="stylesheet" href="../src/css/common.css">
+    <link rel="stylesheet" href="./css/ageimg.css">
+    <link rel="stylesheet" href="./css/dwsbdl.css">
+</head>
+
+<style>
+    .one {
+        width: 600px;
+        height: 90px;
+        background-image: linear-gradient(0deg,
+                #102654 0%,
+                #081c3b 100%),
+            linear-gradient(#081c3b,
+                #081c3b);
+        background-blend-mode: normal,
+            normal;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: row;
+
+        color: #ffffff;
+    }
+    .two{
+        width: 610px;
+    }
+
+    .icon1 {
+        width: 48px;
+        height: 48px;
+        margin-top: 21px;
+        margin-left: 196px;
+    }
+    .righttop {
+    width: 600px;
+    height: 266px;
+    background-color: #0a1d39;
+    border: solid 1px #0b4da2;
+}
+.rightcenter{
+    width: 600px;
+    height: 266px;
+    background-color: #0a1d39;
+    border: solid 1px #0b4da2;
+    margin-top: 20px;
+}
+.rightbottom {
+    width: 600px;
+    height: 267px;
+    background-color: #0a1d39;
+    border: solid 1px #0b4da2;
+    margin-top: 20px;
+}
+.echart5{
+    width: 578px;
+height: 185px;
+margin-top: 10px;
+margin-left: 11px;
+}
+.echart6{
+    width: 578px;
+height: 215px;
+margin-top: 10px;
+margin-left: 11px;
+}
+.echart7{
+    width: 578px;
+height: 216px;
+margin-top: 10px;
+margin-left: 11px;
+}
+.titleimg{
+    width: 128px;
+    height: 28px;
+    margin-left: 546px;
+}
+.left{
+    width: 600px;
+	height: 845px;
+	background-color: #0a1d39;
+	border: solid 1px #0b4da2;
+}
+.right1{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.righttop1{
+    display: flex;
+    flex-direction: row;
+}
+.righttopone{
+    width: 580px;
+	height: 412px;
+	background-color: #0a1d39;
+	border: solid 1px #0b4da2;
+}
+.righttoptwo{
+    width: 600px;
+	height: 412px;
+	background-color: #0a1d39;
+	border: solid 1px #0b4da2;
+    margin-left: 20px;
+}
+.rightbottom1{
+    width: 1200px;
+	height: 413px;
+	background-color: #0a1d39;
+	border: solid 1px #0b4da2;
+    margin-top: 20px;
+}
+
+.twoechart{
+    display: flex;
+    flex-direction: row;
+}
+.echart{
+    width: 578px;
+	height: 224px;
+	background-image: linear-gradient(0deg, 
+		#102654 0%, 
+		#081c3b 100%), 
+	linear-gradient(
+		#081c3b, 
+		#081c3b);
+	background-blend-mode: normal, 
+		normal;
+	border-radius: 3px;
+    margin-top: 12px;
+    margin-left: 11px;
+}
+.echart1{
+    width: 284px;
+	height: 226px;
+}
+.echart2{
+    margin-left: 10px;
+}
+.echart3{
+    width: 558px;
+	height: 333px;
+    margin-left: 11px;
+}
+.echart4{
+    width: 578px;;
+	height: 333px;
+    margin-left: 11px;
+}
+.echart5{
+    width: 584px;
+	height: 334px;
+    margin-left: 11px;
+}
+/*学历分布*/
+.zu358{
+    margin-top:30% ;
+    margin-left: 25%;
+}
+.allimgs{
+    margin-top: -68%;
+    margin-left: 12%;
+}
+/* 标题 */
+.titlebox4{
+    width: 600px;
+	height: 32px;
+	background-image: linear-gradient(-90deg, 
+		rgba(10, 61, 126, 0.2) 0%, 
+		#0a3d7e 50%, 
+		rgba(10, 61, 126, 0.2) 100%), 
+	linear-gradient(
+		#0a3d7e, 
+		#0a3d7e);
+	background-blend-mode: normal, 
+		normal;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+}
+.titlebox5{
+    width: 580px;
+}
+.titlebox6{
+    width: 1200px;
+}
+.timg3{
+    margin-left: 175px;
+}
+.timg4{
+    margin-left: 165px;
+}
+.timg5{
+    margin-left: 465px;
+}
+.time4{
+    margin-left: 349px;
+}
+.smalltit2{
+    width: 127px;
+    height: 15px;
+    text-align: center;
+    margin: 0px;
+}
+.littletitle{
+    margin-bottom: 0px;
+}
+</style>
+
+<body>
+    <div class="bigbox">
+        <!-- <img class="title-bottom" src="./imgs/title-bottom.png" alt=""> -->
+        <div class="title">
+            <select name="选项卡" class="tips">
+                <option value="one">档案管理</option>
+                <option value="two">人事代理服务</option>
+                <option value="three">单位社保代理服务</option>
+                <option value="four" selected="selected">流动人员社保代理服务</option>
+                <option value="five">流动党员</option>
+                <option value="six">公共求职招聘</option>
+            </select>
+            <button class="returnbtn">返回首页</button>
+            <img class="titleimg" src="./imgs/流动党员.png" alt="">
+        </div>
+        <div class="main">
+            <div class="top">
+                <div class="one">
+                    <img class="icon1" src="./imgs/icon_18.png" alt="">
+                    <div class="numbox">
+                        <p style="margin-top: 20px;margin-bottom: 11px;">党支部数</p>
+                        <div class="nums">
+                            <p class="num" id="num1">5,555</p><span class="fen">个</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="one">
+                    <img class="icon1" src="./imgs/icon_16.png" alt="">
+                    <div class="numbox">
+                        <p style="margin-top: 20px;margin-bottom: 11px;">流动党员人数</p>
+                        <div class="nums">
+                            <p class="num" id="num1">5,555</p><span class="fen">人</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="one two">
+                    <img class="icon1" src="./imgs/icon_43.png" alt="">
+                    <div class="numbox">
+                        <p style="margin-top: 20px;margin-bottom: 11px;">缴纳党费总额</p>
+                        <div class="nums">
+                            <p class="num" id="num1">5,555</p><span class="fen">万元</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="left">
+                    <div class="titlebox4">
+                        <img class="timg timg3" src="./imgs/标题 (2).png" alt="">
+                        <p class="smalltit3 smalltit2" style="display: inline;">党支部情况</p>
+                        <img class="timg" src="./imgs/标题 (3).png" alt="">
+                        <p class="time time3">截至：2010-10-13</p>
+                    </div>
+                    <p class="littletitle">历年党支部数量变化</p>
+                    <div class="echart" id="echart1"></div>
+                    <p class="littletitle">历年党员人数变化</p>
+                    <div class="echart" id="echart1"></div>
+                    <div class="twoechart">
+                        <div>
+                            <p class="littletitle">党员学历分布</p>
+                            <div class="echart echart1">
+                                <img class="zu358" src="./imgs/组358_10.png" alt="">
+                                    <div class="allimgs">
+                                        <div class="zuhe">
+                                            <p class="img1">54%
+                                                <span class="wenpin"><br><br>本科</span>
+                                            </p>
+                                            
+                                        </div>
+                                        <div class="zuhe">
+                                            <p class="img1 img2">54%
+                                                <span class="wenpin"><br><br>高中</span>
+                                            </p>
+                                            
+                                        </div>
+                                        <div class="zuhe">
+                                            <p class="img1 img2 img3">54%
+                                                <span class="wenpin"><br><br>大专</span>
+                                            </p>
+                                            
+                                        </div>
+                                        <div class="zuhe">
+                                            <p class="img1 img4">54%
+                                                
+                                            </p>
+                                            <p class="wenpin wenpin4">研究生及以上</p>
+                                            
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="littletitle">党员年龄分布</p>
+                            <div class="echart echart1 echart2" id="chart4"></div> 
+                        </div>
+                    </div>
+                </div> 
+                <div class="right1">
+                    <div class="righttop1">
+                        <div class="righttopone">
+                            <div class="titlebox4 titlebox5">
+                                <img class="timg timg4" src="./imgs/标题 (2).png" alt="">
+                                <p class="smalltit3 smalltit2" style="display: inline;">党费缴纳情况</p>
+                                <img class="timg" src="./imgs/标题 (3).png" alt="">
+                                <p class="time time3">截至：2010-10-13</p>
+                            </div>
+                            <p class="littletitle">历年缴纳党费金额</p>
+                            <div class="echart echart3"></div> 
+                        </div>
+                        <div class="righttoptwo">
+                            <div class="titlebox4">
+                                <img class="timg timg3" src="./imgs/标题 (2).png" alt="">
+                                <p class="smalltit3 smalltit2" style="display: inline;">预备转正情况</p>
+                                <img class="timg" src="./imgs/标题 (3).png" alt="">
+                                <p class="time time3">截至：2010-10-13</p>
+                            </div>
+                            <p class="littletitle">历年预备党员转正情况</p>
+                            <div class="echart echart4"></div> 
+                        </div>
+                    </div>
+                    <div class="rightbottom1">
+                        <div class="titlebox4 titlebox6">
+                            <img class="timg timg5" src="./imgs/标题 (2).png" alt="">
+                            <p class="smalltit3 smalltit2" style="display: inline;">业务办理情况</p>
+                            <img class="timg" src="./imgs/标题 (3).png" alt="">
+                            <p class="time time4">截至：2010-10-13</p>
+                        </div>
+                        <div class="twoechart">
+                            <div>
+                                <p class="littletitle">业务经办情况</p>
+                                <div class="echart echart5"></div>
+                            </div>
+                            <div>
+                                <p class="littletitle">流动党员业务经办情况</p>
+                                <div class="echart echart5 echart2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="./js/echarts.min.js"></script>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/lddy.js"></script>
+
+<script>
+
+</script>

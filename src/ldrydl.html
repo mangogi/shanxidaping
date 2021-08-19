@@ -5,12 +5,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>单位社保代理</title>
+    <title>流动人员社保代理</title>
     <link rel="stylesheet" href="../src/css/common.css">
     <link rel="stylesheet" href="./css/ageimg.css">
     <link rel="stylesheet" href="./css/dwsbdl.css">
 </head>
 
+<style>
+    .one {
+        width: 600px;
+        height: 90px;
+        background-image: linear-gradient(0deg,
+                #102654 0%,
+                #081c3b 100%),
+            linear-gradient(#081c3b,
+                #081c3b);
+        background-blend-mode: normal,
+            normal;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: row;
+
+        color: #ffffff;
+    }
+    .two{
+        width: 610px;
+    }
+
+    .icon1 {
+        width: 48px;
+        height: 48px;
+        margin-top: 21px;
+        margin-left: 196px;
+    }
+    .righttop {
+    width: 600px;
+    height: 266px;
+    background-color: #0a1d39;
+    border: solid 1px #0b4da2;
+}
+.rightcenter{
+    width: 600px;
+    height: 266px;
+    background-color: #0a1d39;
+    border: solid 1px #0b4da2;
+    margin-top: 20px;
+}
+.rightbottom {
+    width: 600px;
+    height: 267px;
+    background-color: #0a1d39;
+    border: solid 1px #0b4da2;
+    margin-top: 20px;
+}
+.echart5{
+    width: 578px;
+height: 185px;
+margin-top: 10px;
+margin-left: 11px;
+}
+.echart6{
+    width: 578px;
+height: 215px;
+margin-top: 10px;
+margin-left: 11px;
+}
+.echart7{
+    width: 578px;
+height: 216px;
+margin-top: 10px;
+margin-left: 11px;
+}
+.btns{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+.changebtn1{
+    width: 114px;
+	height: 20px;
+	background-image: linear-gradient(0deg, 
+		#0543a1 0%, 
+		#09bdb1 100%), 
+	linear-gradient(
+		#3a5fbd, 
+		#3a5fbd);
+	background-blend-mode: normal, 
+		normal;
+	border-style: solid;
+	border-width: 1px;
+	border-image-source: linear-gradient(0deg, 
+		#116aa2 0%, 
+		#1bdfd2 100%);
+	border-image-slice: 1;
+    color: #ffffff;
+    font-size: 12px;
+}
+.changebtn2{
+    width: 114px;
+	height: 20px;
+	background-color: #191c2b;
+	border-style: solid;
+	border-width: 1px;
+	border-image-source: linear-gradient(0deg, 
+		#116aa2 0%, 
+		#1bdfd2 100%);
+	border-image-slice: 1;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+</style>
 
 <body>
     <div class="bigbox">
@@ -19,27 +124,18 @@
             <select name="选项卡" class="tips">
                 <option value="one">档案管理</option>
                 <option value="two">人事代理服务</option>
-                <option value="three" selected="selected">单位社保代理服务</option>
-                <option value="four">流动人员社保代理服务</option>
+                <option value="three">单位社保代理服务</option>
+                <option value="four" selected="selected">流动人员社保代理服务</option>
                 <option value="five">流动党员</option>
                 <option value="six">公共求职招聘</option>
             </select>
             <button class="returnbtn">返回首页</button>
-            <img class="titleimg" src="./imgs/单位社保代理.png" alt="">
+            <img class="titleimg" src="./imgs/流动人员社保代理.png" alt="">
         </div>
         <div class="main">
             <div class="top">
                 <div class="one">
                     <img class="icon1" src="./imgs/icon.png" alt="">
-                    <div class="numbox">
-                        <p style="margin-top: 20px;margin-bottom: 11px;">代理单位数量</p>
-                        <div class="nums">
-                            <p class="num" id="num1">5,555</p><span class="fen">家</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="one">
-                    <img class="icon1" src="./imgs/icon_16.png" alt="">
                     <div class="numbox">
                         <p style="margin-top: 20px;margin-bottom: 11px;">代理人数</p>
                         <div class="nums">
@@ -48,7 +144,7 @@
                     </div>
                 </div>
                 <div class="one">
-                    <img class="icon1" src="./imgs/icon_43.png" alt="">
+                    <img class="icon1" src="./imgs/icon_16.png" alt="">
                     <div class="numbox">
                         <p style="margin-top: 20px;margin-bottom: 11px;">代收社保金额</p>
                         <div class="nums">
@@ -56,8 +152,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="one">
-                    <img class="icon1" src="./imgs/icon_65.png" alt="">
+                <div class="one two">
+                    <img class="icon1" src="./imgs/icon_43.png" alt="">
                     <div class="numbox">
                         <p style="margin-top: 20px;margin-bottom: 11px;">社保待遇支付总额</p>
                         <div class="nums">
@@ -170,7 +266,10 @@
                             <img class="timg" src="./imgs/标题 (3).png" alt="">
                             <p class="time2">截至：2010-10-13</p>
                         </div>
-                        <p class="littletitle littletitle2">历年代理情况</p>
+                        <div class="btns">
+                            <button class="changebtn1">立户实时办理情况</button>
+                            <button class="changebtn2">历年立户情况</button>
+                        </div>
                         <div class="echart1 echart5" id="chart6">
 
                         </div>
@@ -180,12 +279,22 @@
 
                         <div class="titlebox2">
                             <img class="timg timg3" src="./imgs/标题 (2).png" alt="">
-                            <p class="smalltit3 smalltit2">社保代理支付情况</p>
+                            <p class="smalltit3 smalltit2">养老业务办理情况</p>
                             <img class="timg" src="./imgs/标题 (3).png" alt="">
                             <p class="time time3">截至：2010-10-13</p>
                         </div>
-                        <p class="littletitle littletitle2">各险种社保代理支付情况</p>
-                        <div class="echart1 echart5" id="chart7">
+                        <div class="echart1 echart6" id="chart7">
+
+                        </div>
+                    </div>
+                    <div class="rightbottom">
+                        <div class="titlebox2">
+                            <img class="timg timg3" src="./imgs/标题 (2).png" alt="">
+                            <p class="smalltit3 smalltit2">医疗业务办理情况           </p>
+                            <img class="timg" src="./imgs/标题 (3).png" alt="">
+                            <p class="time time3">截至：2010-10-13</p>
+                        </div>
+                        <div class="echart1 echart7" id="chart8">
 
                         </div>
                     </div>
@@ -198,7 +307,7 @@
 </html>
 <script src="./js/echarts.min.js"></script>
 <script src="./js/jquery.min.js"></script>
-<script src="./js/dwsbdl.js"></script>
+<script src="./js/ldrydl.js"></script>
 
 <script>
 

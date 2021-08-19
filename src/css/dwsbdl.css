@@ -1,0 +1,288 @@
+.top {
+    width: 1820px;
+    margin-left: 50px;
+    margin-top: 21px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.one {
+    width: 447px;
+    height: 90px;
+    background-image: linear-gradient(0deg,
+            #102654 0%,
+            #081c3b 100%),
+        linear-gradient(#081c3b,
+            #081c3b);
+    background-blend-mode: normal,
+        normal;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+
+    color: #ffffff;
+}
+
+.icon1 {
+    width: 48px;
+    height: 48px;
+    margin-top: 21px;
+    margin-left: 76px;
+}
+
+.numbox {
+    margin-left: 41px;
+}
+
+.num {
+    font-family: AvantGardeITCbyBT-Medium;
+    font-size: 28px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 24px;
+    letter-spacing: 0px;
+    color: #2bd5fb;
+    margin-top: 0px;
+    margin-bottom: 22px;
+}
+
+.nums {
+    display: flex;
+    flex-direction: row;
+}
+
+.fen {
+    width: 24px;
+    height: 12px;
+    font-family: PingFang-SC-Regular;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 14px;
+    letter-spacing: 0px;
+    color: #fefefe;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: row;
+}
+
+.left {
+    width: 1200px;
+    height: 845px;
+    background-color: #0a1d39;
+    border: solid 1px #0b4da2;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.right {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.righttop {
+    width: 600px;
+    height: 412px;
+    background-color: #0a1d39;
+    border: solid 1px #0b4da2;
+}
+
+.rightbottom {
+    width: 600px;
+    height: 412px;
+    background-color: #0a1d39;
+    border: solid 1px #0b4da2;
+    margin-top: 20px;
+}
+
+/* 小标题组1 1200px */
+.titlebox {
+    width: 1200px;
+    height: 32px;
+    background-image: linear-gradient(-90deg,
+            rgba(10, 61, 126, 0.2) 0%,
+            #0a3d7e 50%,
+            rgba(10, 61, 126, 0.2) 100%),
+        linear-gradient(#0a3d7e,
+            #0a3d7e);
+    background-blend-mode: normal,
+        normal;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.timg {
+    width: 62px;
+    height: 10px;
+
+}
+
+.timg1 {
+    margin-left: 464px;
+}
+
+.smalltit {
+    width: 96px;
+    height: 15px;
+    font-family: PingFang-SC-Bold;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 14px;
+    letter-spacing: 0px;
+    color: #fefefe;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.time {
+    width: 106px;
+    height: 12px;
+    font-family: PingFang-SC-Bold;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 14px;
+    letter-spacing: 0px;
+    color: #39f4f6;
+    margin-left: 357px;
+}
+
+/* 小标题组2 600px */
+.titlebox2 {
+    width: 600px;
+    height: 32px;
+    background-image: linear-gradient(-90deg,
+            rgba(10, 61, 126, 0.2) 0%,
+            #0a3d7e 50%,
+            rgba(10, 61, 126, 0.2) 100%),
+        linear-gradient(#0a3d7e,
+            #0a3d7e);
+    background-blend-mode: normal,
+        normal;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+}
+
+.timg {
+    width: 62px;
+    height: 10px;
+
+}
+
+.timg2 {
+    margin-left: 135px;
+}
+.timg3{
+    margin-left: 155px;
+}
+
+.smalltit2 {
+    width: 176px;
+    height: 15px;
+    font-family: PingFang-SC-Bold;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 14px;
+    letter-spacing: 0px;
+    color: #fefefe;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.smalltit3{
+    width: 128px;
+}
+.time2 {
+    margin-left: 17px;
+}
+.time3{
+    margin-left: 37px;
+}
+/* 学历分布 */
+.zu358 {
+margin-top: 23%;
+margin-left: 30%;
+}
+.allimgs {
+margin-top: -50%;
+margin-left: 20%;
+display: flex;
+flex-direction: row;
+}
+/* 图标的标题 */
+.littletitle{
+    background-image: url('../imgs/标题\ \(1\).png');
+    background-repeat: no-repeat;
+    width: 120px;
+    height: 16px;
+    font-family: PingFang-SC-Bold;
+font-size: 12px;
+font-weight: normal;
+font-stretch: normal;
+line-height: 14px;
+letter-spacing: 0px;
+color: #fefefe;
+padding-left: 12px;
+padding-top: 2px;
+margin-left: 11px;
+margin-top: 10px;
+}
+.littletitle2{
+    margin-left: 11px;
+    width: 136px;
+    margin-bottom: 0px;
+}
+.littletitle3{
+    margin-left: 10px;
+}
+.lefttop{
+    display: flex;
+    flex-direction: row;
+}
+.echart1{
+    width: 782px;
+height: 224px;
+background-image: linear-gradient(0deg, 
+    #102654 0%, 
+    #081c3b 100%), 
+linear-gradient(
+    #081c3b, 
+    #081c3b);
+background-blend-mode: normal, 
+    normal;
+border-radius: 3px;
+margin-left: 7px;
+}
+.echart2{
+    width: 386px;
+    height: 224px;
+    margin-left: 14px;
+    margin-top: 12px;
+}
+.echart3{
+    width: 386px;
+    margin-left: 11px;
+}
+.echart4{
+    width: 386px;
+    margin-left: 10px;
+}
+.echart5{
+    width: 578px;
+height: 333px;
+margin-top: 10px;
+margin-left: 11px;
+}

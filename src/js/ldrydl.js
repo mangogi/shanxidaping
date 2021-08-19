@@ -7,27 +7,18 @@ $(function(){
         dataType:"json",
         success:function(res){
             console.log(res)
-
-            var jfje =[],jfrs=[];
-            for(var i = 0; i < res.peopleSocial.length; i++){
-                jfje.push((res.peopleSocial[i].jfje/10000).toFixed(2));
-                jfrs.push((res.peopleSocial[i].jfrs/1000).toFixed(3))
+            //在库人数 缴费金额 缴费人数  占比
+            var zkrs =[],ycs23t=[], js=[], rszb = [];
+            for(var i = 0; i < res.floatSocial.length; i++){
+                ycs23t.push((res.floatSocial[i].ycs23t/10000).toFixed(0));
+                zkrs.push((res.peopleSocial[i].hj/10000).toFixed(0))
+                js.push((res.floatSocial[i].js/10000).toFixed(3))
+                rszb.push((res.floatSocial[i].js/res.peopleSocial[i].hj *100).toFixed(2))
             }
-            jfje = jfje.reverse();
-            jfrs = jfrs.reverse();
-            console.log(jfje)
-
-                //养老代理单位总数  社保单位代理书  每年单位代理数
-            var ycs05o =[],ycs05s=[], mndws = [];
-            for(var i = 0; i < res.companySocial.length; i++){
-                ycs05o.push((res.companySocial[i].ycs05o/1000).toFixed(3));
-                ycs05s.push((res.companySocial[i].ycs05s/1000).toFixed(3));
-                mndws.push((res.companySocial[i].mndws/1000).toFixed(3))
-            }
-            ycs05o = ycs05o.reverse();
-            ycs05s = ycs05s.reverse();
-            mndws = mndws.reverse();
-
+            zkrs = zkrs.reverse();
+            ycs23t = ycs23t.reverse();
+            js = js.reverse();
+            rszb = rszb.reverse();
 
             var chart1 = echarts.init(document.getElementById('lnsbdl'));
             var option1 =  {
@@ -52,7 +43,7 @@ $(function(){
                     },
                     formatter:function(arg){
                         console.log(arg);
-                        return arg[0].name + "<br />" + "代收缴资金：" + arg[6].value + "万元" + "<br />" + "缴费人数：" + arg[0].value + "千人"
+                        return arg[0].name + "<br />" + "代收缴资金：" + arg[2].value + "万元" + "<br />" + "缴费人数：" + arg[0].value + "千人"
                     }
                 },
                 grid:{
@@ -70,13 +61,14 @@ $(function(){
                     }
                 },
                 legend: {
-                    data: ['代收资金','缴费人数', '在库人数', '基础代理单位数','社保代理单位数','养老代理单位数','代理单位数'],
+                    data: ['代收资金','缴费人数', '在库人数', '所占比例（100%）'],
                     itemHeight:8,
                     itemWidth:8,
                     textStyle:{
                         fontSize:12,
                         color:'#ffffff'
-                    }
+                    },
+                    left:'1%'
                 },
                 xAxis: [
                     {
@@ -114,17 +106,17 @@ $(function(){
                 yAxis: [
                     {
                         type: 'value',
-                        name: '人数（千人）',
-                        nameTextStyle: {    // 名称样式
-                            fontSize: 12,
-                            color:'#ffffff',
-                            fontWeight: 'normal',
-                            padding: [0, 0, 17, -10]    // 四个数字分别为上右下左与原位置距离
-                            // fontWeight: 'bold'
-                        },
+                        // name: '金额（万元）',
+                        // nameTextStyle: {    // 名称样式
+                        //     fontSize: 12,
+                        //     color:'#ffffff',
+                        //     fontWeight: 'normal',
+                        //     padding: [0, 0, 17, -10]    // 四个数字分别为上右下左与原位置距离
+                        //     // fontWeight: 'bold'
+                        // },
                         min: 0,
-                        max: 50,
-                        interval: 10,
+                        max: 45000,
+                        interval: 9000,
                         axisLabel: {        //x轴标签的设置 
                             formatter: '{value}',
                             fontSize:12,
@@ -137,19 +129,19 @@ $(function(){
                     },
                     {
                         type: 'value',
-                        name: '金额（万元）',
-                        nameTextStyle: {    // 名称样式
-                            fontSize: 12,
-                            color:'#ffffff',
-                            fontWeight: 'normal',
-                            padding: [0, -40, 17, 40]    // 四个数字分别为上右下左与原位置距离
-                            // fontWeight: 'bold'
-                        },
+                        // name: '金额（万元）',
+                        // nameTextStyle: {    // 名称样式
+                        //     fontSize: 12,
+                        //     color:'#ffffff',
+                        //     fontWeight: 'normal',
+                        //     padding: [0, -40, 17, 40]    // 四个数字分别为上右下左与原位置距离
+                        //     // fontWeight: 'bold'
+                        // },
                         min: 0,
-                        max: 16000,
-                        interval: 4000,
+                        max: 100,
+                        interval: 20,
                         axisLabel: {        //x轴标签的设置 
-                            formatter: '{value}',
+                            formatter: '{value}%',
                             fontSize:12,
                             color:'#ffffff',
                             fontWeight: 'normal',
@@ -184,7 +176,7 @@ $(function(){
             
                             }
                         },
-                        data: jfrs
+                        data: js
                     },
                     {
                         name: '在库人数',
@@ -203,86 +195,30 @@ $(function(){
             
                             }
                         },
-                        data: [ 40.6, 50.2,25.6, 32.2,44.6, 26.2,33.6, 15.2 ]
-                    },
-                     {
-                        name: '基础代理单位数',
-                        type: 'bar',
-                        itemStyle:{
-                            normal:{
-                                //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
-                                color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{ 
-                                    offset: 0,
-                                    color: '#224072'
-                                }, {
-                                    offset: 1,
-                                    
-                                    color: '#7a74e8'
-                                }])
-            
-                            }
-                        },
-                        data: [ 40.6, 10.2,41.6, 32.2,29.6, 21.2,39.6, 48.2 ]
-                    },
-                     {
-                        name: '社保代理单位数',
-                        type: 'bar',
-                        itemStyle:{
-                            normal:{
-                                //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
-                                color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{ 
-                                    offset: 0,
-                                    color: '#214072'
-                                }, {
-                                    offset: 1,
-                                    
-                                    color: '#b436aa'
-                                }])
-            
-                            }
-                        },
-                        data:ycs05s
-                    },
-                     {
-                        name: '养老代理单位数',
-                        type: 'bar',
-                        itemStyle:{
-                            normal:{
-                                //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
-                                color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{ 
-                                    offset: 0,
-                                    color: '#214072'
-                                }, {
-                                    offset: 1,
-                                    
-                                    color: '#bb6716'
-                                }])
-            
-                            }
-                        },
-                        data:ycs05o
-                    },
-                     {
-                        name: '代理单位数',
-                        type: 'bar',
-                        itemStyle:{
-                            normal:{
-                                //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
-                                color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{ 
-                                    offset: 0,
-                                    color: '#214072'
-                                }, {
-                                    offset: 1,
-                                    
-                                    color: '#1f93d5'
-                                }])
-            
-                            }
-                        },
-                        data: mndws
+                        data:zkrs
                     },
                     {
                         name: '代收资金',
+                        type: 'bar',
+                        itemStyle:{
+                            normal:{
+                                color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{ 
+                                    offset: 0,
+                                    color: '#17448b'
+                                }, {
+                                    offset: .5,
+                                    
+                                    color: '#417ddd'
+                                }])
+                            }
+                        },
+                    
+                        // smooth:true,
+                        // yAxisIndex: 1,
+                        data:ycs23t
+                    },
+                    {
+                        name: '所占比例（100%）',
                         type: 'line',
                         itemStyle:{
                             color:'#e85274'
@@ -294,7 +230,7 @@ $(function(){
                         },
                         smooth:true,
                         yAxisIndex: 1,
-                        data:jfje
+                        data:rszb
                     }
                 ]
             };
@@ -305,10 +241,10 @@ $(function(){
            var aae036 = 2020;
            var yldsje , ybdsje;
 
-               for(var i = 0; i < res.agencyMoney.length; i++){
-                   if(res.agencyMoney[i].aae036 == aae036){
-                       yldsje = res.agencyMoney[i].yldsje;
-                       ybdsje = res.agencyMoney[i].ybdsje;
+               for(var i = 0; i < res.floatAgency.length; i++){
+                   if(res.floatAgency[i].aae036 == aae036){
+                       yldsje = res.floatAgency[i].yldsje;
+                       ybdsje = res.floatAgency[i].ybdsje;
                    }
                }
                var all = yldsje + ybdsje;
@@ -334,7 +270,7 @@ $(function(){
                        left: '18%',
                        top: '38%',
                        style: {
-                           text: '总金额' + '\n' + '{wan|' + ' (万元)'+ '}' +'\n\n' + '{num|' +(all/10000).toFixed(1) + '}',
+                           text: '{text|'+'总金额' +'}'+ '\n' + '{wan|' + ' (万元)'+ '}' +'\n\n' + '{num|' +(all/10000).toFixed(1) + '}',
                            fill:'#fff',
                            width: 30,
                            height: 30,
@@ -343,10 +279,13 @@ $(function(){
                                num:{
                                 fill:'#21e5e8',
                                 fontSize:22,
-                                padding:[0,-18,10,-10]
+                                padding:[0,50,0,0]   //xia 
                                },
                                wan:{
-                                   padding:[5,0,0,0]
+                                   padding:[5,0,0,3]
+                               },
+                               text:{
+                                   padding:[5,5,0,5]
                                }
                            }
                        }
@@ -430,11 +369,11 @@ $(function(){
            chart2.setOption(option2);
 
             //左中2
-            console.log(res.prove)
+            console.log(res.floatServe)
             var zs = 0;
             var data = [],per = [];
-            for (var i = 0; i < res.prove.length; i++) {
-                data.push(res.prove[i].sl)
+            for (var i = 0; i < res.floatServe.length; i++) {
+                data.push(res.floatServe[i].sl)
             }
             data = data.slice(1, 9)
             for(var i = 0; i < data.length; i++){
@@ -448,7 +387,7 @@ $(function(){
             console.log(per)
             console.log(data)
             var className = ['社保咨询', '住房公积金', '4050补贴', '办理证卡业务', '医疗保险业务','养老保险业务','退休业务','其他业务'];
-            var defaultData = [40000, 40000, 40000, 40000, 40000, 40000,40000,40000];
+            var defaultData = [100, 100, 100, 100, 100, 100,100,100];
             var chart3 = echarts.init(document.getElementById('chart3'));
             var option3 = {
                 grid: {
@@ -474,9 +413,9 @@ $(function(){
                 xAxis: {
                     show: false,
                     type: 'value',
-                    max: 10000,
+                    max: 100,
                     min: 0,
-                    interval: 2000
+                    interval: 10
                 },
                 yAxis: [{
                     type: 'category',
@@ -541,10 +480,10 @@ $(function(){
                             barBorderRadius: 0,
                             color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
                                 offset: 0,
-                                color: '#17448b'
+                                color: '#1a809a'
                             }, {
                                 offset: 1,
-                                color: '#417ddd'
+                                color: '#12bab0'
                             }]),
                             // color: colorList
                         },
@@ -831,7 +770,7 @@ $(function(){
                     }
                 },
                 legend: {
-                    data: ['服务费总额', '代理单位数'],
+                    data: ['养老', '医疗'],
                     icon:'rect',
                     itemHeight: 2,
                     itemWidth: 8,
@@ -839,7 +778,7 @@ $(function(){
                         fontSize: 12,
                         color: '#ffffff'
                     },
-                    right: 'center',
+                    right: '5%',
                     top: 10
                 },
                 grid: {
@@ -902,10 +841,17 @@ $(function(){
                             color: '#ffffff',
                             fontWeight: 'normal',
                         },
+                        splitLine: {
+                            show: true,
+                            lineStyle: {
+                                color: '#14325f',
+                                height: 0.5
+                            }
+                        }
                     },
                     {
                         type:'value',
-                        show:true,
+                        show:false,
                         name:'单位数（个）',
                         nameTextStyle: {    // 名称样式
                             fontSize: 12,
@@ -934,7 +880,7 @@ $(function(){
                 ],
                 series: [
                     {
-                        name: '服务费总额',
+                        name: '养老',
                         type: 'line',
                         stack: '金额',
                         itemStyle:{
@@ -956,7 +902,7 @@ $(function(){
                         data: [120, 132, 101, 134, 90, 230, 210,250,190,240]
                     },
                     {
-                        name: '代理单位数',
+                        name: '医疗',
                         type: 'line',
                         stack: '数量',
                         itemStyle:{
@@ -981,232 +927,147 @@ $(function(){
                 ]
             };
             chart6.setOption(option6)
+
             //右下
-            var szl = [], sfje = [], szcgje = [];
-            for(var i = 0; i < res.socialAccount.length; i++){
-                console.log(res.socialAccount[i])
-                sfje.push((res.socialAccount[i].sfje/10000).toFixed(2));
-                szcgje.push((res.socialAccount[i].szcgje/10000).toFixed(2));
-                szl.push((res.socialAccount[i].szcgje/res.socialAccount[i].sfje*100).toFixed(2))
-            }
-            console.log(szl)
-            var chart7 =echarts.init(document.getElementById('chart7'));
-            var option7 = {
-                tooltip: {
-                    trigger: 'axis',
-                    axisPointer: {
-                        type: 'cross',
-                        snap: true,
-                        crossStyle: {
-                            color: '#999999'
-                        }
-                    },
-                    backgroundColor: '#020a17', // 提示框浮层的背景颜色
-                    borderColor: '#020a17', // 提示框浮层的边框颜色
-                    borderWidth:0,
-                    textStyle: { // 提示框浮层的文本样式。
-                        color: '#fff',
-                        fontStyle: 'normal',
-                        fontWeight: 'normal',
-                        fontFamily: 'sans-serif',
-                        fontSize: 12,
-                    },
-                    formatter:function(arg){
-                        console.log(arg);
-                        return arg[0].name + "<br/>" + "收费金额：" + arg[0].value + "万元"
-                                + "<br />" + "上账金额：" + arg[1].value + "万元"
-                                + "<br />" + "上账率：" + arg[2].value + "%"
-                        // return arg[0].name + "<br />" + "代收缴资金：" + arg[6].value + "万元" + "<br />" + "缴费人数：" + arg[0].value + "千人"
-                    }
-                },
-                grid: {
-                    top: 50,
-                    left: 42,
-                    bottom: 50,
-                    right: 42
-                },
-                toolbox: {
-                    feature: {
-                        dataView: { show: false, readOnly: false },
-                        magicType: { show: false, type: ['line', 'bar'] },
-                        restore: { show: false },
-                        saveAsImage: { show: false }
-                    }
-                },
-                legend: {
-                    data: ['收费金额', '上账金额','上账率'],
-                    itemHeight: 8,
-                    itemWidth: 8,
-                    textStyle: {
-                        fontSize: 12,
-                        color: '#ffffff'
-                    },
-                    right: 'center',
-                    top: 10
-
-                },
-                xAxis: [
-                    {
-                        type: 'category',
-                        data: ['企业\n养老','医疗','生育','失业','工伤','住房\n公积金','生育\n津贴','报销'],
-                        axisPointer: {
-                            type: 'shadow'
-                        },
-                        axisLabel: {        //x轴标签的设置 
-                            // formatter: '{value}',
-                            fontSize: 12,
-                            color: '#ffffff',
-                            fontWeight: 'normal',
-                            margin: 9
-                        },
-                        axisLine: {          //坐标轴
-                            show: true,
-                            lineStyle: {
-                                height: 1,
-                                color: '#235198',
-                            }
-                        },
-                        axisTick: {
-                            show: false,      //坐标轴的刻度，
-                            linestyle: {
-                                height: 1,
-                                color: '#235198'
-                            }
-                        },
-                        splitLine: {         //区域中的分割线是否显示
-                            show: false
-                        }
-                    }
-                ],
-                yAxis: [
-                    {
-                        type: 'value',
-                        name: '金额（万元）',
-                        nameTextStyle: {    // 名称样式
-                            fontSize: 12,
-                            color: '#ffffff',
-                            fontWeight: 'normal',
-                            padding: [30, 0, 8, 30]    // 四个数字分别为上右下左与原位置距离
-                            // fontWeight: 'bold'
-                        },
-                        min: 0,
-                        max: 40,
-                        interval: 8,
-                        axisLabel: {        //x轴标签的设置 
-                            formatter: '{value}',
-                            fontSize: 12,
-                            color: '#ffffff',
-                            fontWeight: 'normal',
-                        },
-                        splitLine: {
-                            show: true,
-                            lineStyle: {
-                                color: '#14325f',
-                                height: 0.5
-                            }
-                        }
-                    },
-                    {
-                        type: 'value',
-                        name: '百分比（%）',
-                        nameTextStyle: {    // 名称样式
-                            fontSize: 12,
-                            color: '#ffffff',
-                            fontWeight: 'normal',
-                            padding: [30, 0, 8, 30]    // 四个数字分别为上右下左与原位置距离
-                            // fontWeight: 'bold'
-                        },
-                        show: true,
-                        min:0,
-                        max: 100,
-                        interval: 20,
-                        axisLabel: {        //x轴标签的设置 
-                            formatter: '{value}',
-                            fontSize: 12,
-                            color: '#ffffff',
-                            fontWeight: 'normal',
-                        },
-                        splitLine: {
-                            show: true,
-                            lineStyle: {
-                                color: '#14325f',
-                                height: 0.5
-                            }
-                        }
-                    }
-                ],
-                series: [
-                    {
-                        name: '收费金额',
-                        type: 'bar',
-                        label:{
-                            show:true,
-                            position:'top',
-                            textStyle:{
-                                color:'#1be4d9',
-                                fontSize:12
-                            }
-                        },
-                        itemStyle: {
-                            normal: {
-                                //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
-                                color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
-                                    offset: 0,
-                                    color: '#1a809a'
-                                }, {
-                                    offset: 1,
-
-                                    color: '#12bab0'
-                                }])
-
-                            }
-                        },
-                        barWidth:20,
-                        data: sfje
-                    },
-                    {
-                        name: '上账金额',
-                        type: 'bar',
-                        label:{
-                            show:true,
-                            position:'top',
-                            textStyle:{
-                                color:'#ff41ba',
-                                fontSize:12
-                            }
-                        },
-                        itemStyle: {
-                            normal: {
-                                //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
-                                color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
-                                    offset: 0,
-                                    color: '#b65065'
-                                }, {
-                                    offset: 1,
-
-                                    color: '#a02386'
-                                }])
-
-                            }
-                        },
-                        barWidth:20,
-                        data:szcgje
-                    },
-                    {
-                        name: '上账率',
-                        type: 'line',
-                        yAxisIndex: 1,
-                        itemStyle:{
-                            normal:{
-                                color:'#48e748'
-                            }
-                        },
-                        smooth:true,
-                        data: szl
-                    }
-                ]
-            };
-            chart7.setOption(option7);
+             console.log(res.floatServe)
+             var zs = 0;
+             var data = [],per = [];
+             for (var i = 0; i < res.floatServe.length; i++) {
+                 data.push(res.floatServe[i].sl)
+             }
+             data = data.slice(1, 10)
+             for(var i = 0; i < data.length; i++){
+                 zs= zs + data[i]
+             }
+             console.log(zs)
+             for(var i = 0; i < data.length; i++){
+                //  console.log(data[i]/zs )
+                 per.push((data[i]/zs * 100).toFixed(0))
+             }
+             console.log(per)
+             console.log(data)
+             var className = ['医保立户', '医保关系转入', '医保关系转出', '医疗停保', '医疗年审','医疗上账','医疗退费','医疗报销','其他'];
+             var defaultData = [100, 100, 100, 100, 100, 100,100,100,100];
+             var chart8 = echarts.init(document.getElementById('chart8'));
+             var option8 = {
+                 grid: {
+                     left: '2%',
+                     right: '15%',
+                     bottom: '1%',
+                     top: '8%',
+                     containLabel: true
+                 },
+                 tooltip: {
+                     trigger: 'axis',
+                     axisPointer: {
+                         type: 'none'
+                     },
+                     formatter: function (params) {
+                         return params[0].name + '<br/>' +
+                             "<span style='display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:rgba(36,207,233,0.9)'></span>" +
+                             // params[0].seriesName + ' : ' + Number((params[0].value.toFixed(4) / 10000).toFixed(2)).toLocaleString() + ' <br/>'
+                             params[0].seriesName + ' : ' + params[0].value
+                     }
+                 },
+                 // backgroundColor: 'rgb(20,28,52)',
+                 xAxis: {
+                     show: false,
+                     type: 'value',
+                     max: 100,
+                     min: 0,
+                     interval: 10
+                 },
+                 yAxis: [{
+                     type: 'category',
+                    //  name: '数量（单位：份）',
+                    //  nameLocation: 'start',
+                    //  nameTextStyle: {
+                    //      color: '#fff',
+                    //      padding: [0, 20, 0, -60]
+                    //  },
+                     inverse: true,
+                     axisLabel: {
+                         show: true,
+                         textStyle: {
+                             color: '#fff'
+                         },
+                     },
+                     splitLine: {
+                         show: false
+                     },
+                     axisTick: {
+                         show: false
+                     },
+                     axisLine: {
+                         show: false
+                     },
+                     data: className
+                 }, {
+                     type: 'category',
+                     inverse: true,
+                     axisTick: 'none',
+                     axisLine: 'none',
+                     show: false,
+                     axisLabel: {
+                         textStyle: {
+                             color: '#ffffff',
+                             fontSize: '12',
+                         },
+                         formatter: function (value) {
+                             return value;
+                         },
+                     },
+                     data: data
+                 }],
+                 series: [{
+                     name: '业务经办人次',
+                     type: 'bar',
+                     zlevel: 1,
+                     label: {
+                         show: true,
+                         position: [400,0],   //---相对位置
+                         formatter:function(param){
+                             console.log(param)
+                                return param.value + '人次' +'   ' + per[param.dataIndex] + '%' 
+                         },
+                         textStyle: {
+                             color: '#2ad1f7',
+                             fontSize: 12
+                         }
+                     },
+                     itemStyle: {
+                         normal: {
+                             barBorderRadius: 1,
+                             color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                                 offset: 0,
+                                 color: '#17448b'
+                             }, {
+                                 offset: 1,
+                                 color: '#417ddd'
+                             }]),
+                             // color: colorList
+                         },
+                     },
+                     barWidth: 12,
+                     barCategoryGap: 32,       //---柱形间距
+                     data: data
+                 },
+                 {
+                     name: '背景',
+                     type: 'bar',
+                     barWidth: 12,
+                     barGap: '-100%',
+                     data: defaultData,
+                     itemStyle: {
+                         normal: {
+                             color: '#08162f',
+                             barBorderRadius: 1,
+                         }
+                     },
+                 },
+                 ]
+             };
+             chart8.setOption(option8);
 
 
         },

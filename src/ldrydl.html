@@ -69,12 +69,27 @@ margin-left: 11px;
 height: 215px;
 margin-top: 10px;
 margin-left: 11px;
+display: flex;
+flex-direction: column;
 }
 .echart7{
     width: 578px;
 height: 216px;
 margin-top: 10px;
 margin-left: 11px;
+
+}
+.chart8top{
+    display: flex;
+    flex-direction: row;
+    width: 578px;
+    height: 107.5px;
+    margin: 0px;
+}
+.chart81{
+    width: 192.6px;
+    height: 107.5px;
+    margin: 0px;
 }
 .btns{
     display: flex;
@@ -283,8 +298,17 @@ margin-left: 11px;
                             <img class="timg" src="./imgs/标题 (3).png" alt="">
                             <p class="time time3">截至：2010-10-13</p>
                         </div>
-                        <div class="echart1 echart6" id="chart7">
-
+                        <div class="echart1 echart6">
+                            <div class="chart8top">
+                                <div class="chart81" id="chart81"></div>
+                                <div class="chart81" id="chart82"></div>
+                                <div class="chart81" id="chart83"></div>
+                            </div>
+                            <div class="chart8top chart8bottom">
+                                <div class="chart81" id="chart84"></div>
+                                <div class="chart81" id="chart85"></div>
+                                <div class="chart81" id="chart86"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="rightbottom">
@@ -295,7 +319,7 @@ margin-left: 11px;
                             <p class="time time3">截至：2010-10-13</p>
                         </div>
                         <div class="echart1 echart7" id="chart8">
-
+                           
                         </div>
                     </div>
                 </div>

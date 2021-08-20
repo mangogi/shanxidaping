@@ -757,317 +757,961 @@ $(function(){
             //     }]
             // };
             // chart5.setOption(option5);
-            // //右上
-            // var chart6 = echarts.init(document.getElementById('chart6'));
-            // var option6 = {
-            //     tooltip: {
-            //         trigger: 'axis',
-            //         axisPointer: {
-            //             type: 'cross',
-            //             label: {
-            //                 backgroundColor: '#6a7985'
-            //             }
-            //         }
-            //     },
-            //     legend: {
-            //         data: ['养老', '医疗'],
-            //         icon:'rect',
-            //         itemHeight: 2,
-            //         itemWidth: 8,
-            //         textStyle: {
-            //             fontSize: 12,
-            //             color: '#ffffff'
-            //         },
-            //         right: '5%',
-            //         top: 10
-            //     },
-            //     grid: {
-            //         left: '3%',
-            //         right: '4%',
-            //         bottom: '3%',
-            //         containLabel: true
-            //     },
-            //     xAxis: [
-            //         {
-            //             type: 'category',
-            //             boundaryGap: false,
-            //             axisPointer: {
-            //                 type: 'shadow'
-            //             },
-            //             axisLabel: {        //x轴标签的设置 
-            //                 // formatter: '{value}',
-            //                 fontSize: 12,
-            //                 color: '#ffffff',
-            //                 fontWeight: 'normal',
-            //                 margin: 9
-            //             },
-            //             axisLine: {          //坐标轴
-            //                 show: true,
-            //                 lineStyle: {
-            //                     height: 1,
-            //                     color: '#235198',
-            //                 }
-            //             },
-            //             axisTick: {
-            //                 show: false,      //坐标轴的刻度，
-            //                 linestyle: {
-            //                     height: 1,
-            //                     color: '#235198'
-            //                 }
-            //             },
-            //             splitLine: {         //区域中的分割线是否显示
-            //                 show: false
-            //             },
-            //             data: ['2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020']
-            //         }
-            //     ],
-            //     yAxis: [
-            //         {
-            //             type: 'value',
-            //             name:'金额（万元）',
-            //             nameTextStyle: {    // 名称样式
-            //                 fontSize: 12,
-            //                 color: '#ffffff',
-            //                 fontWeight: 'normal',
-            //                 padding: [30, 0, 8, 30]    // 四个数字分别为上右下左与原位置距离
-            //                 // fontWeight: 'bold'
-            //             },
-            //             min:0,
-            //             max:400,
-            //             interval:80,
-            //             axisLabel: {        //x轴标签的设置 
-            //                 formatter: '{value}',
-            //                 fontSize: 12,
-            //                 color: '#ffffff',
-            //                 fontWeight: 'normal',
-            //             },
-            //             splitLine: {
-            //                 show: true,
-            //                 lineStyle: {
-            //                     color: '#14325f',
-            //                     height: 0.5
-            //                 }
-            //             }
-            //         },
-            //         {
-            //             type:'value',
-            //             show:false,
-            //             name:'单位数（个）',
-            //             nameTextStyle: {    // 名称样式
-            //                 fontSize: 12,
-            //                 color: '#ffffff',
-            //                 fontWeight: 'normal',
-            //                 padding: [30, 0, 8, 30]    // 四个数字分别为上右下左与原位置距离
-            //                 // fontWeight: 'bold'
-            //             },
-            //             min: 0,
-            //             max: 400,
-            //             interval: 80,
-            //             axisLabel: {        //x轴标签的设置 
-            //                 formatter: '{value}',
-            //                 fontSize: 12,
-            //                 color: '#ffffff',
-            //                 fontWeight: 'normal',
-            //             },
-            //             splitLine: {
-            //                 show: true,
-            //                 lineStyle: {
-            //                     color: '#14325f',
-            //                     height: 0.5
-            //                 }
-            //             }
-            //         }
-            //     ],
-            //     series: [
-            //         {
-            //             name: '养老',
-            //             type: 'line',
-            //             stack: '金额',
-            //             itemStyle:{
-            //                 color:'#59bbff'
-            //             },
-            //             smooth:true,
-            //             areaStyle: {
-            //                 color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-            //                     offset: 0,
-            //                     color: 'rgb(89, 187, 255,0.3)'
-            //                 }, {
-            //                     offset: 1,
-            //                     color: 'rgb(89, 187, 255,0)'
-            //                 }])
-            //             },
-            //             emphasis: {
-            //                 focus: 'series'
-            //             },
-            //             data: [120, 132, 101, 134, 90, 230, 210,250,190,240]
-            //         },
-            //         {
-            //             name: '医疗',
-            //             type: 'line',
-            //             stack: '数量',
-            //             itemStyle:{
-            //                 color:'#e85274'
-            //             },
-            //             smooth:true,
-            //             areaStyle: {
-            //                  color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-            //                     offset: 0,
-            //                     color: 'rgb(232, 82, 116,0.5)'
-            //                 }, {
-            //                     offset: 1,
-            //                     color: 'rgb(255, 70, 131,0)'
-            //                 }])
-            //             },
-            //             emphasis: {
-            //                 focus: 'series'
-            //             },
-            //             data: [220, 182, 191, 234, 290, 330, 310,300, 250,380]
-            //         }
+            //左一
+            var chart1 = echarts.init(document.getElementById('echart1'));
+            var option1 = {
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'cross',
+                        label: {
+                            backgroundColor: '#6a7985'
+                        }
+                    }
+                },
+                legend: {
+                    data: ['代理单位党支部', '流动党支部'],
+                    icon:'rect',
+                    itemHeight: 2,
+                    itemWidth: 8,
+                    textStyle: {
+                        fontSize: 12,
+                        color: '#ffffff'
+                    },
+                    right: '5%',
+                    top: 10
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: [
+                    {
+                        type: 'category',
+                        boundaryGap: false,
+                        axisPointer: {
+                            type: 'shadow'
+                        },
+                        axisLabel: {        //x轴标签的设置 
+                            // formatter: '{value}',
+                            fontSize: 12,
+                            color: '#ffffff',
+                            fontWeight: 'normal',
+                            margin: 9
+                        },
+                        axisLine: {          //坐标轴
+                            show: true,
+                            lineStyle: {
+                                height: 1,
+                                color: '#235198',
+                            }
+                        },
+                        axisTick: {
+                            show: false,      //坐标轴的刻度，
+                            linestyle: {
+                                height: 1,
+                                color: '#235198'
+                            }
+                        },
+                        splitLine: {         //区域中的分割线是否显示
+                            show: false
+                        },
+                        data: ['2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020']
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'value',
+                        name:'数量（个）',
+                        nameTextStyle: {    // 名称样式
+                            fontSize: 12,
+                            color: '#ffffff',
+                            fontWeight: 'normal',
+                            padding: [0, 0, 12, -10]    // 四个数字分别为上右下左与原位置距离
+                            // fontWeight: 'bold'
+                        },
+                        min:0,
+                        max:500,
+                        interval:100,
+                        axisLabel: {        //x轴标签的设置 
+                            formatter: '{value}',
+                            fontSize: 12,
+                            color: '#ffffff',
+                            fontWeight: 'normal',
+                        },
+                        splitLine: {
+                            show: true,
+                            lineStyle: {
+                                color: '#14325f',
+                                height: 0.5
+                            }
+                        }
+                    },
+                    {
+                        type:'value',
+                        show:false,
+                        name:'单位数（个）',
+                        nameTextStyle: {    // 名称样式
+                            fontSize: 12,
+                            color: '#ffffff',
+                            fontWeight: 'normal',
+                            padding: [30, 0, 8, 30]    // 四个数字分别为上右下左与原位置距离
+                            // fontWeight: 'bold'
+                        },
+                        min: 0,
+                        max: 400,
+                        interval: 80,
+                        axisLabel: {        //x轴标签的设置 
+                            formatter: '{value}',
+                            fontSize: 12,
+                            color: '#ffffff',
+                            fontWeight: 'normal',
+                        },
+                        splitLine: {
+                            show: true,
+                            lineStyle: {
+                                color: '#14325f',
+                                height: 0.5
+                            }
+                        }
+                    }
+                ],
+                series: [
+                    {
+                        name: '代理单位党支部',
+                        type: 'line',
+                        stack: '数量',
+                        itemStyle:{
+                            color:'#59bbff'
+                        },
+                        smooth:true,
+                        areaStyle: {
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                offset: 0,
+                                color: 'rgb(89, 187, 255,0.3)'
+                            }, {
+                                offset: 1,
+                                color: 'rgb(89, 187, 255,0)'
+                            }])
+                        },
+                        emphasis: {
+                            focus: 'series'
+                        },
+                        data: [120, 132, 101, 134, 90, 230, 210,250,190,240]
+                    },
+                    {
+                        name: '流动党支部',
+                        type: 'line',
+                        stack: '数量',
+                        itemStyle:{
+                            color:'#e85274'
+                        },
+                        smooth:true,
+                        areaStyle: {
+                             color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                offset: 0,
+                                color: 'rgb(232, 82, 116,0.5)'
+                            }, {
+                                offset: 1,
+                                color: 'rgb(255, 70, 131,0)'
+                            }])
+                        },
+                        emphasis: {
+                            focus: 'series'
+                        },
+                        data: [140, 152, 141, 154, 190, 150, 156,165,150,140]
+                    }
                     
-            //     ]
-            // };
-            // chart6.setOption(option6)
+                ]
+            };
+            chart1.setOption(option1)
 
-            // //右下
-            //  console.log(res.floatServe)
-            //  var zs = 0;
-            //  var data = [],per = [];
-            //  for (var i = 0; i < res.floatServe.length; i++) {
-            //      data.push(res.floatServe[i].sl)
-            //  }
-            //  data = data.slice(1, 10)
-            //  for(var i = 0; i < data.length; i++){
-            //      zs= zs + data[i]
-            //  }
-            //  console.log(zs)
-            //  for(var i = 0; i < data.length; i++){
-            //     //  console.log(data[i]/zs )
-            //      per.push((data[i]/zs * 100).toFixed(0))
-            //  }
-            //  console.log(per)
-            //  console.log(data)
-            //  var className = ['医保立户', '医保关系转入', '医保关系转出', '医疗停保', '医疗年审','医疗上账','医疗退费','医疗报销','其他'];
-            //  var defaultData = [100, 100, 100, 100, 100, 100,100,100,100];
-            //  var chart8 = echarts.init(document.getElementById('chart8'));
-            //  var option8 = {
-            //      grid: {
-            //          left: '2%',
-            //          right: '15%',
-            //          bottom: '1%',
-            //          top: '8%',
-            //          containLabel: true
-            //      },
-            //      tooltip: {
-            //          trigger: 'axis',
-            //          axisPointer: {
-            //              type: 'none'
-            //          },
-            //          formatter: function (params) {
-            //              return params[0].name + '<br/>' +
-            //                  "<span style='display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:rgba(36,207,233,0.9)'></span>" +
-            //                  // params[0].seriesName + ' : ' + Number((params[0].value.toFixed(4) / 10000).toFixed(2)).toLocaleString() + ' <br/>'
-            //                  params[0].seriesName + ' : ' + params[0].value
-            //          }
-            //      },
-            //      // backgroundColor: 'rgb(20,28,52)',
-            //      xAxis: {
-            //          show: false,
-            //          type: 'value',
-            //          max: 100,
-            //          min: 0,
-            //          interval: 10
-            //      },
-            //      yAxis: [{
-            //          type: 'category',
-            //         //  name: '数量（单位：份）',
-            //         //  nameLocation: 'start',
-            //         //  nameTextStyle: {
-            //         //      color: '#fff',
-            //         //      padding: [0, 20, 0, -60]
-            //         //  },
-            //          inverse: true,
-            //          axisLabel: {
-            //              show: true,
-            //              textStyle: {
-            //                  color: '#fff'
-            //              },
-            //          },
-            //          splitLine: {
-            //              show: false
-            //          },
-            //          axisTick: {
-            //              show: false
-            //          },
-            //          axisLine: {
-            //              show: false
-            //          },
-            //          data: className
-            //      }, {
-            //          type: 'category',
-            //          inverse: true,
-            //          axisTick: 'none',
-            //          axisLine: 'none',
-            //          show: false,
-            //          axisLabel: {
-            //              textStyle: {
-            //                  color: '#ffffff',
-            //                  fontSize: '12',
-            //              },
-            //              formatter: function (value) {
-            //                  return value;
-            //              },
-            //          },
-            //          data: data
-            //      }],
-            //      series: [{
-            //          name: '业务经办人次',
-            //          type: 'bar',
-            //          zlevel: 1,
-            //          label: {
-            //              show: true,
-            //              position: [400,0],   //---相对位置
-            //              formatter:function(param){
-            //                  console.log(param)
-            //                     return param.value + '人次' +'   ' + per[param.dataIndex] + '%' 
-            //              },
-            //              textStyle: {
-            //                  color: '#2ad1f7',
-            //                  fontSize: 12
-            //              }
-            //          },
-            //          itemStyle: {
-            //              normal: {
-            //                  barBorderRadius: 1,
-            //                  color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
-            //                      offset: 0,
-            //                      color: '#17448b'
-            //                  }, {
-            //                      offset: 1,
-            //                      color: '#417ddd'
-            //                  }]),
-            //                  // color: colorList
-            //              },
-            //          },
-            //          barWidth: 12,
-            //          barCategoryGap: 32,       //---柱形间距
-            //          data: data
-            //      },
-            //      {
-            //          name: '背景',
-            //          type: 'bar',
-            //          barWidth: 12,
-            //          barGap: '-100%',
-            //          data: defaultData,
-            //          itemStyle: {
-            //              normal: {
-            //                  color: '#08162f',
-            //                  barBorderRadius: 1,
-            //              }
-            //          },
-            //      },
-            //      ]
-            //  };
-            //  chart8.setOption(option8);
+               //左2
+               var lddysl = [],dldwdyzs = [], aae036 = [];
+               for(var i = 0; i < res.partyMember.length; i++){
+                   lddysl.push(res.partyMember[i].lddysl);
+                   dldwdyzs.push(res.partyMember[i].dldwdysl);
+               }
+               console.log(lddysl)
+                lddysl = (lddysl.reverse()).splice(6,15);
+                dldwdyzs = (dldwdyzs.reverse()).splice(6, 15);
+                console.log(dldwdyzs)
+               var chart2 = echarts.init(document.getElementById('echart2'));
+               var option2 = {
+                   tooltip: {
+                       trigger: 'axis',
+                       axisPointer: {
+                           type: 'cross',
+                           label: {
+                               backgroundColor: '#6a7985'
+                           }
+                       }
+                   },
+                   legend: {
+                       data: ['代理单位党支部人数', '流动党支部党员人数'],
+                       icon:'rect',
+                       itemHeight: 2,
+                       itemWidth: 8,
+                       textStyle: {
+                           fontSize: 12,
+                           color: '#ffffff'
+                       },
+                       right: '5%',
+                       top: 10
+                   },
+                   grid: {
+                       left: '3%',
+                       right: '4%',
+                       bottom: '3%',
+                       containLabel: true
+                   },
+                   xAxis: [
+                       {
+                           type: 'category',
+                           boundaryGap: false,
+                           axisPointer: {
+                               type: 'shadow'
+                           },
+                           axisLabel: {        //x轴标签的设置 
+                               // formatter: '{value}',
+                               fontSize: 12,
+                               color: '#ffffff',
+                               fontWeight: 'normal',
+                               margin: 9
+                           },
+                           axisLine: {          //坐标轴
+                               show: true,
+                               lineStyle: {
+                                   height: 1,
+                                   color: '#235198',
+                               }
+                           },
+                           axisTick: {
+                               show: false,      //坐标轴的刻度，
+                               linestyle: {
+                                   height: 1,
+                                   color: '#235198'
+                               }
+                           },
+                           splitLine: {         //区域中的分割线是否显示
+                               show: false
+                           },
+                           data: ['2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020']
+                       }
+                   ],
+                   yAxis: [
+                       {
+                           type: 'value',
+                           name:'人数（百人）',
+                           nameTextStyle: {    // 名称样式
+                               fontSize: 12,
+                               color: '#ffffff',
+                               fontWeight: 'normal',
+                               padding: [30, 0, 12, -10]    // 四个数字分别为上右下左与原位置距离
+                               // fontWeight: 'bold'
+                           },
+                           min:0,
+                           max:1200,
+                           interval:200,
+                           axisLabel: {        //x轴标签的设置 
+                               formatter: '{value}',
+                               fontSize: 12,
+                               color: '#ffffff',
+                               fontWeight: 'normal',
+                           },
+                           splitLine: {
+                               show: true,
+                               lineStyle: {
+                                   color: '#14325f',
+                                   height: 0.5
+                               }
+                           }
+                       },
+                       {
+                           type:'value',
+                           show:false,
+                           name:'单位数（个）',
+                           nameTextStyle: {    // 名称样式
+                               fontSize: 12,
+                               color: '#ffffff',
+                               fontWeight: 'normal',
+                               padding: [30, 0, 8, 30]    // 四个数字分别为上右下左与原位置距离
+                               // fontWeight: 'bold'
+                           },
+                           min: 0,
+                           max: 1200,
+                           interval: 250,
+                           axisLabel: {        //x轴标签的设置 
+                               formatter: '{value}',
+                               fontSize: 12,
+                               color: '#ffffff',
+                               fontWeight: 'normal',
+                           },
+                           splitLine: {
+                               show: true,
+                               lineStyle: {
+                                   color: '#14325f',
+                                   height: 0.5
+                               }
+                           }
+                       }
+                   ],
+                   series: [
+                       {
+                           name: '代理单位党支部人数',
+                           type: 'line',
+                           stack: '金额',
+                           itemStyle:{
+                               color:'#bc1c7b'
+                           },
+                           smooth:true,
+                           areaStyle: {
+                               color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                   offset: 0,
+                                   color: 'rgb(188, 28, 123,0.3)'
+                               }, {
+                                   offset: 1,
+                                   color: 'rgb(188, 28, 123,0)'
+                               }])
+                           },
+                           emphasis: {
+                               focus: 'series'
+                           },
+                           data: dldwdyzs
+                       },
+                       {
+                           name: '流动党支部党员人数',
+                           type: 'line',
+                           stack: '数量',
+                           itemStyle:{
+                               color:'#48e748'
+                           },
+                           smooth:true,
+                           areaStyle: {
+                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                   offset: 0,
+                                   color: 'rgb(72, 231, 72,0.5)'
+                               }, {
+                                   offset: 1,
+                                   color: 'rgb(72, 231, 72,0)'
+                               }])
+                           },
+                           emphasis: {
+                               focus: 'series'
+                           },
+                           data: lddysl
+                       }
+                       
+                   ]
+               };
+               chart2.setOption(option2)
+
+               //右上1
+               var pjje = [],zje = [];
+               for(var i = 0 ; i < res.partyPay.length; i++){
+                   pjje.push((res.partyPay[i].pjje/1000).toFixed(2));
+                   zje.push((res.partyPay[i].zje/1000).toFixed(2));
+               }
+               pjje = pjje.reverse();
+               zje = zje.reverse();
+               console.log(pjje)
+               console.log(zje)
+               var chart5 =echarts.init(document.getElementById('chart5'));
+               var option5 = {
+                   tooltip: {
+                       trigger: 'axis',
+                       axisPointer: {
+                           type: 'cross',
+                           snap: true,
+                           crossStyle: {
+                               color: '#020a17'
+                           },
+                       },
+                       backgroundColor:'#020a17',
+                       textStyle:{
+                           color:'#fff'
+                       }
+                   },
+                   grid: {
+                       top: 50,
+                       left: 60,
+                       bottom: 30,
+                       right: 24
+                   },
+                   toolbox: {
+                       feature: {
+                           dataView: { show: false, readOnly: false },
+                           magicType: { show: false, type: ['line', 'bar'] },
+                           restore: { show: false },
+                           saveAsImage: { show: false }
+                       }
+                   },
+                   legend: {
+                       data: ['缴纳党费(万元)', '平均缴纳党费(万元)'],
+                       itemHeight: 8,
+                       itemWidth: 8,
+                       textStyle: {
+                           fontSize: 12,
+                           color: '#ffffff'
+                       },
+                       right: 22,
+                       top: 12
+   
+                   },
+                   xAxis: [
+                       {
+                           type: 'category',
+                           data: ['2014','2015','2016','2017','2018','2019','2020'],
+                           axisPointer: {
+                               type: 'shadow'
+                           },
+                           axisLabel: {        //x轴标签的设置 
+                               // formatter: '{value}',
+                               fontSize: 12,
+                               color: '#ffffff',
+                               fontWeight: 'normal',
+                               margin: 9
+                           },
+                           axisLine: {          //坐标轴
+                               show: true,
+                               lineStyle: {
+                                   height: 1,
+                                   color: '#235198',
+                               }
+                           },
+                           axisTick: {
+                               show: false,      //坐标轴的刻度，
+                               linestyle: {
+                                   height: 1,
+                                   color: '#235198'
+                               }
+                           },
+                           splitLine: {         //区域中的分割线是否显示
+                               show: false
+                           }
+                       }
+                   ],
+                   yAxis: [
+                       {
+                           type: 'value',
+                           name: '金额（千元）',
+                           nameTextStyle: {    // 名称样式
+                               fontSize: 12,
+                               color: '#ffffff',
+                               fontWeight: 'normal',
+                               padding: [30, 0, 8, -10]    // 四个数字分别为上右下左与原位置距离
+                               // fontWeight: 'bold'
+                           },
+                           min: 0,
+                           max: 1200,
+                           interval: 200,
+                           axisLabel: {        //x轴标签的设置 
+                               formatter: '{value}',
+                               fontSize: 12,
+                               color: '#ffffff',
+                               fontWeight: 'normal',
+                           },
+                           splitLine: {
+                               show: true,
+                               lineStyle: {
+                                   color: '#14325f',
+                                   height: 0.5
+                               }
+                           }
+                       },
+                       {
+                           type: 'value',
+                           name: '温度',
+                           show: false,
+                           min: 0,
+                           max: 25,
+                           interval: 5,
+                           axisLabel: {
+                               formatter: '{value} °C'
+                           }
+                       }
+                   ],
+                   series: [
+                       {
+                           name: '缴纳党费(万元)',
+                           type: 'bar',
+                           label:{
+                               show:true,
+                               position:'top',
+                               textStyle:{
+                                   color:'#1be4d9',
+                                   fontSize:12
+                               }
+                           },
+                           itemStyle: {
+                               normal: {
+                                   //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
+                                   color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                                       offset: 0,
+                                       color: '#1a809a'
+                                   }, {
+                                       offset: 1,
+   
+                                       color: '#12bab0'
+                                   }])
+   
+                               }
+                           },
+                           barWidth:20,
+                           data: zje
+                       },
+                       {
+                           name: '平均缴纳党费(万元)',
+                           type: 'bar',
+                           label:{
+                               show:true,
+                               position:'top',
+                               textStyle:{
+                                   color:'#ff41ba',
+                                   fontSize:12
+                               }
+                           },
+                           itemStyle: {
+                               normal: {
+                                   //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
+                                   color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                                       offset: 0,
+                                       color: '#b65065'
+                                   }, {
+                                       offset: 1,
+   
+                                       color: '#a02386'
+                                   }])
+   
+                               }
+                           },
+                           barWidth:20,
+                           data:pjje
+                       },
+                   ]
+               };
+               chart5.setOption(option5);
+               //右上1
+               var zcrs = [];
+               for(var i = 0 ; i < res.partyOut.length; i++){
+                zcrs.push(res.partyOut[i].zcrs);
+       
+               }
+               zcrs = zcrs.reverse();
+               var chart6 =echarts.init(document.getElementById('chart6'));
+               var option6 = {
+                   tooltip: {
+                       trigger: 'axis',
+                       axisPointer: {
+                           type: 'cross',
+                           snap: true,
+                           crossStyle: {
+                               color: '#020a17'
+                           },
+                       },
+                       backgroundColor:'#020a17',
+                       textStyle:{
+                           color:'#fff'
+                       }
+                   },
+                   grid: {
+                       top: 50,
+                       left: 60,
+                       bottom: 30,
+                       right: 24
+                   },
+                   toolbox: {
+                       feature: {
+                           dataView: { show: false, readOnly: false },
+                           magicType: { show: false, type: ['line', 'bar'] },
+                           restore: { show: false },
+                           saveAsImage: { show: false }
+                       }
+                   },
+                   legend: {
+                       data: ['转正人数'],
+                       itemHeight: 8,
+                       itemWidth: 8,
+                       textStyle: {
+                           fontSize: 12,
+                           color: '#ffffff'
+                       },
+                       right: 22,
+                       top: 12
+   
+                   },
+                   xAxis: [
+                       {
+                           type: 'category',
+                           data: ['2011','2012','2013','2014','2015','2016','2017','2018','2019','2020'],
+                           axisPointer: {
+                               type: 'shadow'
+                           },
+                           axisLabel: {        //x轴标签的设置 
+                               // formatter: '{value}',
+                               fontSize: 12,
+                               color: '#ffffff',
+                               fontWeight: 'normal',
+                               margin: 9
+                           },
+                           axisLine: {          //坐标轴
+                               show: true,
+                               lineStyle: {
+                                   height: 1,
+                                   color: '#235198',
+                               }
+                           },
+                           axisTick: {
+                               show: false,      //坐标轴的刻度，
+                               linestyle: {
+                                   height: 1,
+                                   color: '#235198'
+                               }
+                           },
+                           splitLine: {         //区域中的分割线是否显示
+                               show: false
+                           }
+                       }
+                   ],
+                   yAxis: [
+                       {
+                           type: 'value',
+                           name: '人数（千人）',
+                           nameTextStyle: {    // 名称样式
+                               fontSize: 12,
+                               color: '#ffffff',
+                               fontWeight: 'normal',
+                               padding: [30, 0, 8, -10]    // 四个数字分别为上右下左与原位置距离
+                               // fontWeight: 'bold'
+                           },
+                           min: 0,
+                           max: 600,
+                           interval: 100,
+                           axisLabel: {        //x轴标签的设置 
+                               formatter: '{value}',
+                               fontSize: 12,
+                               color: '#ffffff',
+                               fontWeight: 'normal',
+                           },
+                           splitLine: {
+                               show: true,
+                               lineStyle: {
+                                   color: '#14325f',
+                                   height: 0.5
+                               }
+                           }
+                       },
+                       
+                   ],
+                   series: [
+                       {
+                           name: '转正人数',
+                           type: 'bar',
+                           label:{
+                               show:true,
+                               position:'top',
+                               textStyle:{
+                                   color:'#1be4d9',
+                                   fontSize:12
+                               }
+                           },
+                           itemStyle: {
+                               normal: {
+                                   //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
+                                   color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                                       offset: 0,
+                                       color: '#17448b'
+                                   }, {
+                                       offset: 1,
+   
+                                       color: '#417ddd'
+                                   }])
+   
+                               }
+                           },
+                           barWidth:20,
+                           data: zcrs
+                       }
+                       
+                   ]
+               };
+               chart6.setOption(option6);
+   
+               //右下1
+             console.log(res.partyServe)
+             var zs = 0;
+             var legends = [],per = [],sl = [];
+             for (var i = 0; i < res.partyServe.length; i++) {
+                 legends.push(res.partyServe[i].gnname);
+                 sl.push(res.partyServe[i].sl)
+             }
+             for(var i = 0; i < sl.length; i++){
+                 zs= zs + sl[i]
+             }
+             console.log(zs)
+             for(var i = 0; i < sl.length; i++){
+                //  console.log(data[i]/zs )
+                 per.push((sl[i]/zs * 100).toFixed(0))
+             }
+             console.log(legends)
+             console.log(per)
+             console.log(zs)
+             var defaultData = [100, 100, 100, 100, 100];
+             var chart7 = echarts.init(document.getElementById('chart7'));
+             var option7 = {
+                 grid: {
+                     left: '2%',
+                     right: '1%',
+                     bottom: '1%',
+                     top: '8%',
+                     containLabel: true
+                 },
+                 tooltip: {
+                     trigger: 'axis',
+                     axisPointer: {
+                         type: 'none'
+                     },
+                     formatter: function (params) {
+                         return params[0].name + '<br/>' +
+                             "<span style='display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:rgba(36,207,233,0.9)'></span>" +
+                             // params[0].seriesName + ' : ' + Number((params[0].value.toFixed(4) / 10000).toFixed(2)).toLocaleString() + ' <br/>'
+                             params[0].seriesName + ' : ' + params[0].value
+                     }
+                 },
+                 // backgroundColor: 'rgb(20,28,52)',
+                 xAxis: {
+                     show: false,
+                     type: 'value',
+                     max: 100,
+                     min: 0,
+                     interval: 10
+                 },
+                 yAxis: [{
+                     type: 'category',
+                    //  name: '数量（单位：份）',
+                    //  nameLocation: 'start',
+                    //  nameTextStyle: {
+                    //      color: '#fff',
+                    //      padding: [0, 20, 0, -60]
+                    //  },
+                     inverse: true,
+                     axisLabel: {
+                         show: true,
+                         textStyle: {
+                             color: '#fff'
+                         },
+                     },
+                     splitLine: {
+                         show: false
+                     },
+                     axisTick: {
+                         show: false
+                     },
+                     axisLine: {
+                         show: false
+                     },
+                     data: legends
+                 }, {
+                     type: 'category',
+                     inverse: true,
+                     axisTick: 'none',
+                     axisLine: 'none',
+                     show: false,
+                     axisLabel: {
+                         textStyle: {
+                             color: '#ffffff',
+                             fontSize: '12',
+                         },
+                         formatter: function (value) {
+                             return value;
+                         },
+                     },
+                     data: legends
+                 }],
+                 series: [{
+                     name: '业务经办人次',
+                     type: 'bar',
+                     zlevel: 1,
+                     label: {
+                         show: true,
+                         position: [330,0],   //---相对位置
+                         formatter:function(param){
+                             console.log(param)
+                                return param.value + '人次' +'   ' + per[param.dataIndex] + '%' 
+                         },
+                         textStyle: {
+                             color: '#2ad1f7',
+                             fontSize: 12
+                         }
+                     },
+                     itemStyle: {
+                         normal: {
+                             barBorderRadius: 1,
+                             color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                                 offset: 0,
+                                 color: '#1a809a'
+                             }, {
+                                 offset: 1,
+                                 color: '#12bab0'
+                             }]),
+                             // color: colorList
+                         },
+                     },
+                     barWidth: 20,
+                     barCategoryGap: 32,       //---柱形间距
+                     data: sl
+                 },
+                 {
+                     name: '背景',
+                     type: 'bar',
+                     barWidth: 20,
+                     barGap: '-100%',
+                     data: [100, 100, 100, 100, 100],
+                     itemStyle: {
+                         normal: {
+                             color: '#08162f',
+                             barBorderRadius: 1,
+                         }
+                     },
+                 },
+                 ]
+             };
+             chart7.setOption(option7);
+            // 右下2
+            console.log(res.partyServe)
+             var zs = 0;
+             var legends = [],per = [],sl = [];
+             for (var i = 0; i < res.partyServe.length; i++) {
+                 legends.push(res.partyServe[i].gnname);
+                 sl.push(res.partyServe[i].sl)
+             }
+             for(var i = 0; i < sl.length; i++){
+                 zs= zs + sl[i]
+             }
+             console.log(zs)
+             for(var i = 0; i < sl.length; i++){
+                //  console.log(data[i]/zs )
+                 per.push((sl[i]/zs * 100).toFixed(0))
+             }
+             console.log(legends)
+             console.log(per)
+             console.log(zs)
+            var data = [{
+                name: legends[0],
+                value: sl[0],
+                beforevalue:sl[0]
+            },
+            {
+                name: legends[1],
+                value:sl[1]*15,
+                beforevalue:sl[1]
+            },
+            {
+                name: legends[2],
+                value:sl[2]*3,
+                beforevalue:sl[2]
+            },
+            {
+                name: legends[3],
+                value:sl[3]*6,
+                beforevalue:sl[3]
+            },
+            {
+                name: legends[4],
+                value:sl[4]*5,
+                beforevalue:sl[4]
+            }
+            ];
+            var colors = ['#9a4cd6','#f775f2','#62199a','#0e9595','#055b7e'].reverse()
+            var chart8 = echarts.init(document.getElementById('chart8'))
+            var option8 = {
+                
+                color: colors,
+                graphic:{
+                        type: 'image',
+                        style: {
+                            image: "./imgs/底部-02.png", // 你的图片地址
+                            width: 220,
+                            height: 220,
+                            color: '#fff'
+                        },
+                        left: '7%',
+                        top: '17%'
+                },
+                legend: {
+                    orient: 'vertical',
+                    top: "center",
+                    left: "60%",
+                    itemGap: 20,
+                    width: 50,
+                    icon: 'circle', //设置图例小图标的样式，这里控制
+                    itemWidth: 6,
+                    itemHeight: 6,
+                    textStyle: {
+                        color: "#fff",
+                        fontSize: 12,
+                        rich: {
+                            name: {
+                                padding: [35.0, 0, 0]
+                            },
+                            num: {
+                                color: '#22f2fa',
+                                padding: [10, 0, 10, 0]         //上左下右？
+                            },
+                            per: {
+                                color: '#f5ef97'
+                            }
+
+                        }
+                    },
+                    data: legends,
+                    formatter: function (param) {
+                        // return '{a|text}{a|   }{b|' +  name + '}'
+                        console.log(param)
+                        // console.log(data)
+                        for (var i = 0; i < data.length; i++) {
+                            if (data[i].name == param) {
+                                console.log(data[i].beforevalue)
+                                return '{name|' + param + '}' + '\n' + '{num|' + data[i].beforevalue + '人次' + '}' + '   '
+                                    + '{per|' + (data[i].beforevalue / zs * 100).toFixed(0) + '%' + '}'
+                            }
+                        }
+                    },
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: '{a} <br/>{b} : {c} ({d}%)'
+                },
+                series: [{
+                    name: '半径模式',
+                    type: 'pie',
+                    radius: ['20%', '70%'],
+                    center: ['25%', '50%'],
+                    roseType: 'radius',
+                    minShowLabelAngle: 60,
+                    label: {
+                        show: false,
+                        // normal: {
+                        //     position: 'outside',
+                        //     fontSize: 16,
+                        //     color: '#21e5e8',
+                        //     formatter: (params) => {
+                        //         return params.name + '\n' + (params.value / zs * 100).toFixed(2) + '%'
+                        //     }
+                        // }
+                    },
+                    labelLine: {
+                        length: 0.5,
+                        length2: 20,
+                        smooth: false
+                    },
+                    data: data
+                }]
+            };
+            chart8.setOption(option8);
+
 
 
         },
